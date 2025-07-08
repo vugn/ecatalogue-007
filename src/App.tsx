@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import ScrollToTopButton from './components/ScrollToTopButton';
 import HomePage from './pages/HomePage';
 import CatalogPage from './pages/CatalogPage';
 import ProductDetailPage from './pages/ProductDetailPage';
@@ -104,6 +106,8 @@ function App() {
     <Router>
       <CartContext.Provider value={cartContextValue}>
         <div className="min-h-screen bg-gray-50">
+          <ScrollToTop />
+          <ScrollToTopButton />
           <Header
             cartItemsCount={getTotalItems()}
           />
