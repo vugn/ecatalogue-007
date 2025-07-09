@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Shield, ShoppingCart, Phone, Mail, MapPin, Menu, X } from 'lucide-react';
+import { CartContext } from '../App';
 
-interface HeaderProps {
-  cartItemsCount: number;
-}
-
-const Header: React.FC<HeaderProps> = ({ cartItemsCount }) => {
+const Header: React.FC = () => {
+  // Get cart items count from the Cart Context
+  const cart = useContext(CartContext);
+  const cartItemsCount = cart ? cart.getTotalItems() : 0;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();

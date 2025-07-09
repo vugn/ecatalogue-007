@@ -2,11 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProductCatalog from '../components/ProductCatalog';
 import Breadcrumb from '../components/Breadcrumb';
-import { useCart } from '../App';
+import useCartContext from '../hooks/useCartContext';
 
 const CatalogPage: React.FC = () => {
     const navigate = useNavigate();
-    const { addToCart } = useCart();
+    const { addItem: addToCart } = useCartContext();
 
     return (
         <main className="min-h-screen pt-4">
@@ -19,7 +19,7 @@ const CatalogPage: React.FC = () => {
             </div>
             <ProductCatalog
                 onProductSelect={(productId) => navigate(`/produk/${productId}`)}
-                onAddToCart={addToCart}
+                onAddToCart={(product) => addToCart({ ...product, quantity: 1 })}
                 isHomePage={false}
             />
         </main>

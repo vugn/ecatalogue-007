@@ -1,12 +1,17 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import ProductDetail from '../components/ProductDetail';
-import { useCart } from '../App';
+import { useContext } from 'react';
+import { CartContext } from '../App';
 
 const ProductDetailPage: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
-    const { addToCart } = useCart();
+    const cart = useContext(CartContext);
+
+    if (!cart) {
+        throw new Error('CartContext must be used within a CartProvider');
+    }
 
     if (!id) {
         navigate('/katalog');
@@ -18,7 +23,7 @@ const ProductDetailPage: React.FC = () => {
             <ProductDetail
                 productId={id}
                 onBack={() => navigate('/katalog')}
-                onAddToCart={addToCart}
+                onAddToCart={product => cart.addItem({ ...product, quantity: 1 })}
             />
         </main>
     );

@@ -1,15 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Checkout from '../components/Checkout';
-import { useCart } from '../App';
+import useCartContext from '../hooks/useCartContext';
+import { CartItem } from '../data/unifiedSchema';
 
 const CheckoutPage: React.FC = () => {
     const navigate = useNavigate();
-    const { cartItems, removeFromCart } = useCart();
+    const { items: cartItems, removeItem: removeFromCart } = useCartContext();
 
     // Clear cart by removing all items
     const handleClearCart = () => {
-        cartItems.forEach(item => removeFromCart(item.id));
+        cartItems.forEach((item: CartItem) => removeFromCart(item.productId));
     };
 
     return (

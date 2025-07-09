@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Shield, Users, Briefcase, ShoppingCart, Star, Search, Grid, List, CheckCircle, FileText } from 'lucide-react';
-import { CartItem } from '../App';
+import { CartItem } from '../data/unifiedSchema';
 
 interface ProductCatalogProps {
   onProductSelect: (productId: string) => void;
@@ -285,7 +285,8 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                   </button>
                   <button
                     onClick={() => onAddToCart({
-                      id: product.id,
+                      id: `cart-${Date.now()}`,
+                      productId: product.id,
                       name: product.name,
                       price: product.price,
                       duration: 1,

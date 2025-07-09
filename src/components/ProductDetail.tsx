@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { ArrowLeft, ShoppingCart, Star, Check, Shield, Award, Clock, Users, MessageCircle, Phone } from 'lucide-react';
-import { CartItem } from '../App';
+import { ArrowLeft, ShoppingCart, Star, Check, Shield, Award, Clock, Users, MessageCircle, Phone, BookOpen } from 'lucide-react';
+import { CartItem } from '../data/unifiedSchema';
+import caseStudies from '../data/caseStudies';
+import CaseStudyTab from './CaseStudyTab';
 
 interface ProductDetailProps {
   productId: string;
@@ -422,7 +424,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
               <div className="space-y-3">
                 <button
                   onClick={() => onAddToCart({
-                    id: productId,
+                    id: `cart-${Date.now()}`,
+                    productId: productId,
                     name: currentProduct.name,
                     price: currentProduct.price,
                     duration: (productId === 'security-corporate' || productId === 'cleaning-corporate' || productId === 'sales-corporate') ? 12 : selectedDuration,
@@ -478,7 +481,12 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="border-b border-slate-200">
             <div className="flex space-x-8 px-8 overflow-x-auto">
-              {['overview', 'specifications', ...(productId === 'security-corporate' || productId === 'cleaning-corporate' || productId === 'sales-corporate' ? ['rab'] : []), 'testimonials'].map((tab) => (
+              {[
+                'overview',
+                'specifications',
+                ...(productId === 'security-corporate' || productId === 'cleaning-corporate' || productId === 'sales-corporate' ? ['rab', 'case-study'] : []),
+                'testimonials'
+              ].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
@@ -489,7 +497,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
                 >
                   {tab === 'overview' ? 'Fitur Lengkap' :
                     tab === 'specifications' ? 'Spesifikasi' :
-                      tab === 'rab' ? 'Alokasi Anggaran (RAB)' : 'Testimoni'}
+                      tab === 'rab' ? 'Alokasi Anggaran (RAB)' :
+                        tab === 'case-study' ? 'Studi Kasus' : 'Testimoni'}
                 </button>
               ))}
             </div>
@@ -665,6 +674,22 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
                   ))}
                 </div>
               </div>
+            )}
+
+            {activeTab === 'case-study' && (
+              <>
+                {caseStudies.filter(cs => cs.productId === productId).length > 0 ? (
+                  <CaseStudyTab caseStudy={caseStudies.find(cs => cs.productId === productId)!} />
+                ) : (
+                  <div className="text-center py-12">
+                    <BookOpen className="h-16 w-16 text-slate-300 mx-auto mb-4" />
+                    <h3 className="text-xl font-bold text-slate-800 mb-2">Belum Ada Studi Kasus</h3>
+                    <p className="text-slate-600 max-w-md mx-auto">
+                      Studi kasus untuk produk ini sedang dalam proses persiapan dan akan segera ditambahkan.
+                    </p>
+                  </div>
+                )}
+              </>
             )}
           </div>
         </div>

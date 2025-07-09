@@ -2,11 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Hero from '../components/Hero';
 import ProductCatalog from '../components/ProductCatalog';
-import { useCart } from '../App';
+import useCartContext from '../hooks/useCartContext';
 
 const HomePage: React.FC = () => {
     const navigate = useNavigate();
-    const { addToCart } = useCart();
+    const { addItem } = useCartContext();
 
     return (
         <main>
@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
             />
             <ProductCatalog
                 onProductSelect={(productId) => navigate(`/produk/${productId}`)}
-                onAddToCart={addToCart}
+                onAddToCart={(product) => addItem({ ...product, quantity: 1 })}
                 isHomePage={true}
                 onCertificatesClick={() => navigate('/sertifikat')}
             />

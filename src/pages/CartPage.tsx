@@ -1,11 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Minus, Plus, Trash2, ShoppingCart } from 'lucide-react';
-import { useCart, CartItem } from '../App';
+import useCartContext from '../hooks/useCartContext';
+import { CartItem } from '../data/unifiedSchema';
 
 const CartPage: React.FC = () => {
     const navigate = useNavigate();
-    const { cartItems, updateCartQuantity, removeFromCart, getTotalPrice } = useCart();
+    const { items: cartItems, updateQuantity: updateCartQuantity, removeItem: removeFromCart, getTotalPrice } = useCartContext();
 
     const formatPrice = (price: number) => {
         return new Intl.NumberFormat('id-ID', {
@@ -102,7 +103,7 @@ const CartPage: React.FC = () => {
                                                 <h3 className="text-lg font-bold text-slate-800 mb-2">{item.name}</h3>
                                                 <div className="space-y-1 text-sm text-slate-600">
                                                     <div>Kategori: <span className="capitalize">{item.category}</span></div>
-                                                    <div>Tipe: <span className="font-medium">{getContractType(item.id)}</span></div>
+                                                    <div>Tipe: <span className="font-medium">{getContractType(item.productId)}</span></div>
                                                     {item.duration > 1 && (
                                                         <div>Durasi: <span className="font-medium">{item.duration} bulan</span></div>
                                                     )}
@@ -126,7 +127,7 @@ const CartPage: React.FC = () => {
                                                 <span className="text-sm font-medium text-slate-700">Jumlah:</span>
                                                 <div className="flex items-center space-x-2">
                                                     <button
-                                                        onClick={() => updateCartQuantity(item.id, item.quantity - 1)}
+                                                        onClick={() => updateCartQuantity(item.productId, item.quantity - 1)}
                                                         className="p-1 rounded-md hover:bg-slate-100 transition-colors"
                                                         disabled={item.quantity <= 1}
                                                     >
@@ -134,7 +135,7 @@ const CartPage: React.FC = () => {
                                                     </button>
                                                     <span className="w-8 text-center font-medium">{item.quantity}</span>
                                                     <button
-                                                        onClick={() => updateCartQuantity(item.id, item.quantity + 1)}
+                                                        onClick={() => updateCartQuantity(item.productId, item.quantity + 1)}
                                                         className="p-1 rounded-md hover:bg-slate-100 transition-colors"
                                                     >
                                                         <Plus className="h-4 w-4 text-slate-600" />
@@ -143,7 +144,7 @@ const CartPage: React.FC = () => {
                                             </div>
 
                                             <button
-                                                onClick={() => removeFromCart(item.id)}
+                                                onClick={() => removeFromCart(item.productId)}
                                                 className="text-red-600 hover:text-red-700 transition-colors p-2 hover:bg-red-50 rounded-md"
                                             >
                                                 <Trash2 className="h-4 w-4" />
