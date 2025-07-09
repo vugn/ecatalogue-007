@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowLeft, CreditCard, Building, User, Calendar, CheckCircle } from 'lucide-react';
-import { CartItem } from '../App';
+import { CartItem } from '../data/unifiedSchema';
 
 interface CheckoutProps {
   cartItems: CartItem[];
@@ -43,7 +43,7 @@ const Checkout: React.FC<CheckoutProps> = ({ cartItems, onBack, onClearCart }) =
   const getTotalPrice = () => {
     return cartItems.reduce((total, item) => {
       // For corporate packages, price is already yearly, so don't multiply by duration
-      if (item.id === 'security-corporate' || item.id === 'cleaning-corporate' || item.id === 'sales-corporate') {
+      if (item.productId === 'security-corporate' || item.productId === 'cleaning-corporate' || item.productId === 'sales-corporate') {
         return total + (item.price * item.quantity);
       }
       // For other items, multiply by duration (monthly)
@@ -109,12 +109,12 @@ const Checkout: React.FC<CheckoutProps> = ({ cartItems, onBack, onClearCart }) =
                       <h4 className="font-medium text-slate-800 text-sm">{item.name}</h4>
                       <p className="text-xs text-slate-600">{item.category}</p>
                       <p className="text-xs text-slate-600">
-                        {(item.id === 'security-corporate' || item.id === 'cleaning-corporate' || item.id === 'sales-corporate')
+                        {(item.productId === 'security-corporate' || item.productId === 'cleaning-corporate' || item.productId === 'sales-corporate')
                           ? `${item.quantity}x × Kontrak Tahunan`
                           : `${item.quantity}x × ${item.duration} bulan`}
                       </p>
                       <p className="font-semibold text-blue-600 text-sm">
-                        {(item.id === 'security-corporate' || item.id === 'cleaning-corporate' || item.id === 'sales-corporate')
+                        {(item.productId === 'security-corporate' || item.productId === 'cleaning-corporate' || item.productId === 'sales-corporate')
                           ? formatPrice(item.price * item.quantity)
                           : formatPrice(item.price * item.quantity * item.duration)}
                       </p>

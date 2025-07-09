@@ -10,7 +10,6 @@ interface WorkforceDetailProps {
 const WorkforceDetail: React.FC<WorkforceDetailProps> = ({ selectedWorker, onBack, onWorkerSelect }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterDepartment, setFilterDepartment] = useState('all');
-  const [viewMode, setViewMode] = useState('grid'); // grid or detail
 
   const employees = [
     {
