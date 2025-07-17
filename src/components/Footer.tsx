@@ -8,17 +8,17 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="bg-blue-600 p-2 rounded-lg">
+              <div className="bg-green-600 p-2 rounded-lg">
                 <Shield className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">Unit 007</h3>
-                <p className="text-slate-400 text-sm">Professional Services</p>
+                <h3 className="text-xl font-bold">Koperasi Kodim 007</h3>
+                <p className="text-slate-400 text-sm">E-Catalog Resmi</p>
               </div>
             </div>
             <p className="text-slate-400 leading-relaxed mb-6">
-              Penyedia layanan profesional terpercaya untuk kebutuhan keamanan,
-              kebersihan, dan tenaga penjualan di Banjarmasin.
+              Melayani kebutuhan ATK, sembako, dan jasa khusus dengan harga terjangkau
+              untuk masyarakat umum dan anggota Kodim 007 Banjarmasin.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-slate-400 hover:text-white transition-colors">
@@ -34,20 +34,22 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-6">Layanan</h4>
+            <h4 className="text-lg font-semibold mb-6">Kategori Produk</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Jasa Keamanan</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Cleaning Service</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Outsourcing Sales</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Konsultasi</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">ATK (Alat Tulis Kantor)</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Sembako</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Jasa Khusus</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Lainnya</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-6">Perusahaan</h4>
+            <h4 className="text-lg font-semibold mb-6">Layanan</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Tentang Kami</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Sertifikasi & Legalitas</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Pengamanan Profesional</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Pelatihan Bela Diri</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Pembayaran Online</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Konsultasi Gratis</a></li>
             </ul>
           </div>
 
@@ -55,19 +57,19 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-6">Kontak</h4>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-blue-400" />
+                <MapPin className="h-5 w-5 text-green-400" />
                 <p className="text-slate-400">
-                  Jl. A. Yani Km 5.5 No. 123<br />
-                  Banjarmasin, Kalsel 70249
+                  Kodim 007 Banjarmasin<br />
+                  Kalimantan Selatan 70249
                 </p>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-blue-400" />
+                <Phone className="h-5 w-5 text-green-400" />
                 <p className="text-slate-400">+62 511 123 4567</p>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-blue-400" />
-                <p className="text-slate-400">info@unit007bjm.com</p>
+                <Mail className="h-5 w-5 text-green-400" />
+                <p className="text-slate-400">koperasi@kodim007bjm.mil.id</p>
               </div>
             </div>
           </div>
@@ -76,7 +78,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-slate-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-slate-400 text-sm">
-              © 2024 Unit 007 Banjarmasin. Semua hak dilindungi undang-undang.
+              © 2024 Koperasi Kodim 007 Banjarmasin. Semua hak dilindungi undang-undang.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">

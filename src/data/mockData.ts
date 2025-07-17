@@ -4,444 +4,538 @@ import {
     CaseStudy,
     Certificate,
     LegalDocument,
-    ProductType,
-    RABConfig
+    ProductType
 } from './unifiedSchema';
 
-// RAB Configuration for corporate services
-const rabConfigs: Record<string, RABConfig> = {
-    'security-corporate': {
-        currency: 'Rp',
-        title: 'Keamanan',
-        color: 'blue',
-        components: [
-            { name: 'Gaji & Tunjangan Tim', percentage: 60, description: 'Anggota Satpam, Komandan Regu, Koordinator Lapangan' },
-            { name: 'Seragam & Perlengkapan Standar', percentage: 10, description: 'Seragam, HT, alat patroli, dan perlengkapan operasional' },
-            { name: 'Asuransi & BPJS Ketenagakerjaan', percentage: 15, description: 'Kepatuhan hukum dan kesejahteraan tim' },
-            { name: 'Pelatihan & Peningkatan Kualifikasi', percentage: 5, description: 'Pelatihan penyegaran, sertifikasi berkala' },
-            { name: 'Biaya Operasional & Manajemen Proyek', percentage: 10, description: 'Dukungan kantor, manajemen, dan keuntungan perusahaan' }
-        ]
-    },
-    'cleaning-corporate': {
-        currency: 'Rp',
-        title: 'Cleaning Service',
-        color: 'green',
-        components: [
-            { name: 'Gaji & Tunjangan Tim', percentage: 60, description: 'Cleaning Staff, Supervisor, Koordinator Area' },
-            { name: 'Peralatan & Perlengkapan', percentage: 15, description: 'Mesin cleaning, vacuum, peralatan modern' },
-            { name: 'Bahan Kimia & Consumables', percentage: 10, description: 'Eco-friendly products, sanitizer, tissue' },
-            { name: 'Asuransi & BPJS Ketenagakerjaan', percentage: 10, description: 'Kepatuhan hukum dan kesejahteraan tim' },
-            { name: 'Biaya Operasional & Manajemen', percentage: 5, description: 'Dukungan kantor, manajemen, keuntungan' }
-        ]
-    },
-    'sales-corporate': {
-        currency: 'Rp',
-        title: 'Sales',
-        color: 'purple',
-        components: [
-            { name: 'Gaji & Tunjangan Tim Sales', percentage: 60, description: 'Sales Executive, Sales Manager, Regional Director' },
-            { name: 'Digital Marketing & Advertising', percentage: 15, description: 'Online campaign, content creation, media buy' },
-            { name: 'Technology & CRM Platform', percentage: 10, description: 'CRM system, automation tools, analytics' },
-            { name: 'Training & Development', percentage: 5, description: 'Sales training, product knowledge, skill development' },
-            { name: 'Biaya Operasional & Manajemen', percentage: 10, description: 'Dukungan kantor, manajemen, keuntungan' }
-        ]
-    }
-};
-
-// Sample product data
+// Sample product data for Koperasi Kodim 007
 const products: Product[] = [
+    // ATK (Alat Tulis Kantor) Products
     {
-        id: 'security-corporate',
+        id: 'atk-001',
         createdAt: '2025-01-15T08:30:00Z',
         updatedAt: '2025-06-20T14:45:00Z',
         isActive: true,
-        name: 'Jasa Keamanan Korporat BUMN',
-        category: 'Jasa Keamanan',
-        slug: 'jasa-keamanan-korporat-bumn',
-        type: ProductType.CORPORATE,
-        price: 3000000000,
-        originalPrice: 3000000000,
+        name: 'Paket ATK Lengkap Kantor',
+        category: 'ATK',
+        slug: 'paket-atk-lengkap-kantor',
+        type: ProductType.INDIVIDUAL,
+        price: 150000,
+        originalPrice: 180000,
+        discountPercentage: 16.67,
+        rating: 4.8,
+        reviews: 45,
+        images: [
+            'https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&w=800'
+        ],
+        description: 'Paket lengkap alat tulis kantor berkualitas untuk kebutuhan administrasi sehari-hari. Cocok untuk kantor, sekolah, dan keperluan pribadi.',
+        shortDescription: 'Paket lengkap ATK berkualitas untuk kebutuhan kantor dan administrasi.',
+        features: [
+            'Pulpen gel 12 pcs (biru, hitam, merah)',
+            'Pensil 2B 6 pcs',
+            'Penghapus putih 4 pcs',
+            'Penggaris 30cm 2 pcs',
+            'Spidol permanent 6 pcs',
+            'Kertas HVS A4 1 rim',
+            'Map plastik 10 pcs',
+            'Stapler + isi staples',
+            'Paper clip 1 box',
+            'Correction pen 2 pcs'
+        ],
+        specifications: {
+            'Isi Paket': '10 jenis ATK lengkap',
+            'Kualitas': 'Grade A, tahan lama',
+            'Kemasan': 'Box eksklusif Koperasi Kodim 007',
+            'Garansi': '30 hari tukar barang rusak',
+            'Pengiriman': 'Gratis ongkir area Banjarmasin'
+        },
+        testimonials: [
+            {
+                id: 'atk-test-1',
+                name: 'Ibu Sari - Guru SD',
+                rating: 5,
+                comment: 'ATK lengkap dan berkualitas, harga sangat terjangkau. Anak-anak suka dengan kualitas pulpennya.'
+            },
+            {
+                id: 'atk-test-2',
+                name: 'Pak Budi - Staff Kantor',
+                rating: 5,
+                comment: 'Paket ATK yang sangat lengkap, cocok untuk kebutuhan kantor sehari-hari. Harga murah meriah!'
+            }
+        ],
+        faqs: [
+            {
+                question: 'Apakah bisa beli satuan?',
+                answer: 'Ya, kami juga melayani pembelian satuan untuk setiap item ATK. Silakan hubungi admin untuk informasi harga satuan.'
+            },
+            {
+                question: 'Bagaimana cara pembayaran?',
+                answer: 'Pembayaran bisa melalui transfer bank, e-wallet (OVO, DANA, GoPay), atau QRIS. Pembayaran tunai juga tersedia untuk pengambilan langsung.'
+            }
+        ],
+        relatedProducts: ['atk-002', 'atk-003'],
+        badge: 'Terlaris',
+        inStock: true,
+        isPublished: true,
+        caseStudies: [],
+        metadata: {
+            seoTitle: 'Paket ATK Lengkap Kantor | Koperasi Kodim 007',
+            seoDescription: 'Paket ATK lengkap berkualitas dengan harga terjangkau dari Koperasi Kodim 007 Banjarmasin.',
+            seoKeywords: ['ATK murah', 'alat tulis kantor', 'koperasi kodim', 'ATK lengkap']
+        }
+    },
+    {
+        id: 'atk-002',
+        createdAt: '2025-01-16T09:15:00Z',
+        updatedAt: '2025-06-18T11:30:00Z',
+        isActive: true,
+        name: 'Kertas HVS A4 80gsm',
+        category: 'ATK',
+        slug: 'kertas-hvs-a4-80gsm',
+        type: ProductType.INDIVIDUAL,
+        price: 45000,
+        originalPrice: 55000,
+        discountPercentage: 18.18,
+        rating: 4.9,
+        reviews: 78,
+        images: [
+            'https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&w=800'
+        ],
+        description: 'Kertas HVS A4 berkualitas tinggi 80gsm, putih bersih, cocok untuk print dokumen, fotokopi, dan keperluan kantor.',
+        shortDescription: 'Kertas HVS A4 80gsm berkualitas tinggi untuk keperluan print dan fotokopi.',
+        features: [
+            'Ukuran A4 standar (21 x 29.7 cm)',
+            'Gramatur 80gsm',
+            'Warna putih bersih',
+            'Tidak mudah macet di printer',
+            'Hasil print tajam dan jelas',
+            '500 lembar per rim'
+        ],
+        specifications: {
+            'Ukuran': 'A4 (21 x 29.7 cm)',
+            'Gramatur': '80gsm',
+            'Isi': '500 lembar per rim',
+            'Warna': 'Putih',
+            'Kemasan': 'Plastik wrapping'
+        },
+        testimonials: [
+            {
+                id: 'hvs-test-1',
+                name: 'Kantor Kelurahan Sungai Jingah',
+                rating: 5,
+                comment: 'Kertas berkualitas bagus, tidak mudah macet saat print. Harga lebih murah dari toko lain.'
+            }
+        ],
+        faqs: [
+            {
+                question: 'Minimal order berapa rim?',
+                answer: 'Minimal order 1 rim. Untuk pembelian 5 rim atau lebih, ada diskon tambahan 5%.'
+            }
+        ],
+        relatedProducts: ['atk-001', 'atk-003'],
+        badge: 'Hemat',
+        inStock: true,
+        isPublished: true,
+        caseStudies: [],
+        metadata: {
+            seoTitle: 'Kertas HVS A4 80gsm Murah | Koperasi Kodim 007',
+            seoDescription: 'Kertas HVS A4 80gsm berkualitas tinggi dengan harga terjangkau dari Koperasi Kodim 007.',
+            seoKeywords: ['kertas HVS', 'kertas A4', 'kertas murah', 'koperasi kodim']
+        }
+    },
+
+    // Sembako Products
+    {
+        id: 'sembako-001',
+        createdAt: '2025-01-17T07:45:00Z',
+        updatedAt: '2025-06-19T16:20:00Z',
+        isActive: true,
+        name: 'Beras Premium 5kg',
+        category: 'Sembako',
+        slug: 'beras-premium-5kg',
+        type: ProductType.INDIVIDUAL,
+        price: 65000,
+        originalPrice: 75000,
+        discountPercentage: 13.33,
+        rating: 4.7,
+        reviews: 156,
+        images: [
+            'https://images.pexels.com/photos/33239/wheat-field-wheat-yellow-grain.jpg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/4110256/pexels-photo-4110256.jpeg?auto=compress&cs=tinysrgb&w=800'
+        ],
+        description: 'Beras premium kualitas terbaik, pulen, wangi, dan bergizi tinggi. Langsung dari petani lokal Kalimantan Selatan.',
+        shortDescription: 'Beras premium kualitas terbaik, pulen dan wangi dari petani lokal.',
+        features: [
+            'Beras premium grade A',
+            'Pulen dan wangi alami',
+            'Bebas kutu dan kotoran',
+            'Kemasan higienis 5kg',
+            'Langsung dari petani lokal',
+            'Sudah disortir berkualitas'
+        ],
+        specifications: {
+            'Berat': '5 kg',
+            'Jenis': 'Beras putih premium',
+            'Asal': 'Petani lokal Kalsel',
+            'Kemasan': 'Karung plastik food grade',
+            'Expired': '6 bulan dari tanggal produksi'
+        },
+        testimonials: [
+            {
+                id: 'beras-test-1',
+                name: 'Ibu Ratna - Ibu Rumah Tangga',
+                rating: 5,
+                comment: 'Beras pulen dan enak, keluarga suka. Harga lebih murah dari supermarket tapi kualitas sama bagusnya.'
+            },
+            {
+                id: 'beras-test-2',
+                name: 'Pak Hendra - Anggota Kodim',
+                rating: 5,
+                comment: 'Beras berkualitas dengan harga terjangkau. Pelayanan koperasi juga ramah dan cepat.'
+            }
+        ],
+        faqs: [
+            {
+                question: 'Apakah beras sudah bersih?',
+                answer: 'Ya, beras sudah melalui proses sortir dan pembersihan, bebas dari kutu dan kotoran.'
+            },
+            {
+                question: 'Bisa pesan dalam jumlah besar?',
+                answer: 'Bisa, untuk pembelian 10 karung atau lebih ada harga khusus. Silakan hubungi admin.'
+            }
+        ],
+        relatedProducts: ['sembako-002', 'sembako-003'],
+        badge: 'Populer',
+        inStock: true,
+        isPublished: true,
+        caseStudies: [],
+        metadata: {
+            seoTitle: 'Beras Premium 5kg Murah | Koperasi Kodim 007',
+            seoDescription: 'Beras premium kualitas terbaik dengan harga terjangkau dari Koperasi Kodim 007 Banjarmasin.',
+            seoKeywords: ['beras murah', 'beras premium', 'sembako murah', 'koperasi kodim']
+        }
+    },
+    {
+        id: 'sembako-002',
+        createdAt: '2025-01-18T08:20:00Z',
+        updatedAt: '2025-06-17T14:15:00Z',
+        isActive: true,
+        name: 'Minyak Goreng 2L',
+        category: 'Sembako',
+        slug: 'minyak-goreng-2l',
+        type: ProductType.INDIVIDUAL,
+        price: 28000,
+        originalPrice: 32000,
+        discountPercentage: 12.5,
+        rating: 4.6,
+        reviews: 89,
+        images: [
+            'https://images.pexels.com/photos/4110256/pexels-photo-4110256.jpeg?auto=compress&cs=tinysrgb&w=800'
+        ],
+        description: 'Minyak goreng berkualitas tinggi, jernih, tidak berbau tengik. Cocok untuk menggoreng dan memasak sehari-hari.',
+        shortDescription: 'Minyak goreng berkualitas tinggi, jernih dan tidak berbau tengik.',
+        features: [
+            'Minyak goreng premium 2 liter',
+            'Jernih dan tidak berbau',
+            'Tahan panas tinggi',
+            'Kemasan botol plastik aman',
+            'Sudah tersertifikasi BPOM',
+            'Cocok untuk segala masakan'
+        ],
+        specifications: {
+            'Volume': '2 liter',
+            'Kemasan': 'Botol plastik food grade',
+            'Sertifikasi': 'BPOM dan Halal MUI',
+            'Expired': '18 bulan dari tanggal produksi'
+        },
+        testimonials: [
+            {
+                id: 'minyak-test-1',
+                name: 'Ibu Dewi - Pedagang Gorengan',
+                rating: 5,
+                comment: 'Minyak bagus, tahan lama untuk menggoreng. Harga lebih murah dari distributor lain.'
+            }
+        ],
+        faqs: [
+            {
+                question: 'Apakah minyak sudah halal?',
+                answer: 'Ya, minyak goreng kami sudah bersertifikat halal MUI dan BPOM.'
+            }
+        ],
+        relatedProducts: ['sembako-001', 'sembako-003'],
+        badge: 'Hemat',
+        inStock: true,
+        isPublished: true,
+        caseStudies: [],
+        metadata: {
+            seoTitle: 'Minyak Goreng 2L Murah | Koperasi Kodim 007',
+            seoDescription: 'Minyak goreng berkualitas tinggi dengan harga terjangkau dari Koperasi Kodim 007.',
+            seoKeywords: ['minyak goreng murah', 'minyak goreng 2L', 'sembako murah']
+        }
+    },
+
+    // Jasa Khusus (Premium Services)
+    {
+        id: 'jasa-keamanan',
+        createdAt: '2025-01-19T10:30:00Z',
+        updatedAt: '2025-06-16T12:45:00Z',
+        isActive: true,
+        name: 'Jasa Pengamanan & Keamanan Profesional',
+        category: 'Jasa Khusus',
+        slug: 'jasa-pengamanan-keamanan-profesional',
+        type: ProductType.CUSTOM,
+        price: 0, // Harga tidak ditampilkan
+        originalPrice: 0,
         discountPercentage: 0,
         rating: 5.0,
-        reviews: 23,
+        reviews: 12,
         images: [
             'https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800',
-            'https://images.pexels.com/photos/6287318/pexels-photo-6287318.jpeg?auto=compress&cs=tinysrgb&w=800',
-            'https://images.pexels.com/photos/6287283/pexels-photo-6287283.jpeg?auto=compress&cs=tinysrgb&w=800'
+            'https://images.pexels.com/photos/8728380/pexels-photo-8728380.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
-        description: 'Solusi keamanan komprehensif dengan kontrak tahunan tetap untuk BUMN dan korporat besar. Meliputi penyediaan tim keamanan profesional dengan struktur berlapis untuk menjaga keamanan fasilitas kompleks secara 24/7.',
-        shortDescription: 'Solusi keamanan komprehensif dengan kontrak tahunan tetap untuk BUMN dan korporat besar.',
+        description: 'Layanan pengamanan profesional dengan personel berpengalaman militer. Meliputi pengamanan acara, pengawalan, dan keamanan fasilitas dengan standar tinggi.',
+        shortDescription: 'Layanan pengamanan profesional dengan personel berpengalaman militer.',
         features: [
-            'Kontrak Tahunan Tetap (Fixed Yearly Contract)',
-            'Tim Keamanan Berlapis: Anggota, Danru, Korlap',
-            'Cakupan Layanan 24/7 dengan Shift Rotasi',
-            'Patroli & Monitoring Regular',
-            'Personel Terlatih & Tersertifikasi Gada Pratama/Madya',
-            'Perlengkapan Lengkap & HT Radio Komunikasi',
-            'Respons Cepat untuk Situasi Darurat',
-            'Laporan Digital Real-time',
-            'Asuransi dan BPJS Ketenagakerjaan Lengkap',
-            'Quality Control dan Audit Security'
+            'Personel berpengalaman militer',
+            'Pengamanan acara VIP',
+            'Pengawalan personal/korporat',
+            'Keamanan fasilitas 24/7',
+            'Pelatihan keamanan khusus',
+            'Konsultasi keamanan',
+            'Sistem komunikasi terintegrasi',
+            'Respons cepat situasi darurat'
         ],
         specifications: {
-            'Model Kontrak': 'Kontrak Tahunan Tetap (Fixed Yearly)',
-            'Durasi Layanan': '24/7 dengan sistem shift',
-            'Struktur Tim': 'Anggota Satpam, Danru, Korlap dengan Pengawas',
-            'Sertifikasi': 'Gada Pratama, Gada Madya, Beladiri Dasar',
-            'Perlengkapan': 'Seragam Standar, HT, Perlengkapan Patroli',
-            'Laporan': 'Real-time digital dashboard dan laporan berkala',
-            'Response Time': 'Insiden darurat dalam 3 menit',
-            'Cakupan Area': 'Unlimited sesuai kontrak'
+            'Personel': 'Ex-TNI/Polri berpengalaman',
+            'Sertifikasi': 'Gada Pratama & Madya',
+            'Peralatan': 'Standar militer',
+            'Cakupan': 'Lokal & regional',
+            'Konsultasi': 'Gratis survey lokasi'
         },
         testimonials: [
             {
-                id: 'sec-test-1',
-                name: 'PT Pelabuhan Indonesia',
+                id: 'keamanan-test-1',
+                name: 'PT. Banjarmasin Sejahtera',
                 rating: 5,
-                comment: 'Layanan keamanan sangat profesional dan responsif. Keamanan fasilitas pelabuhan kami terjaga dengan baik 24/7.'
-            },
-            {
-                id: 'sec-test-2',
-                name: 'RSUD Ulin Banjarmasin',
-                rating: 5,
-                comment: 'Keamanan rumah sakit sangat terjaga. Personel selalu siap siaga dan sigap menangani insiden.'
+                comment: 'Layanan keamanan sangat profesional. Tim berpengalaman dan dapat diandalkan untuk menjaga keamanan perusahaan.'
             }
         ],
         faqs: [
             {
-                question: 'Apakah personel keamanan sudah tersertifikasi?',
-                answer: 'Ya, semua personel keamanan kami telah memiliki sertifikasi Gada Pratama, dan untuk posisi Danru memiliki sertifikasi Gada Madya sesuai standar Polri.'
+                question: 'Bagaimana cara mengetahui harga layanan?',
+                answer: 'Harga disesuaikan dengan kebutuhan spesifik. Silakan hubungi admin untuk konsultasi dan penawaran khusus.'
             },
             {
-                question: 'Bagaimana sistem shift yang diterapkan?',
-                answer: 'Kami menerapkan sistem 3 shift (pagi, siang, malam) dengan durasi 8 jam per shift, dengan alokasi personel yang disesuaikan dengan kebutuhan keamanan pada masing-masing shift.'
-            },
-            {
-                question: 'Apakah tersedia layanan respons cepat untuk situasi darurat?',
-                answer: 'Ya, kami memiliki tim respons cepat yang tersedia 24/7 dengan waktu respons kurang dari 3 menit untuk situasi darurat.'
+                question: 'Apakah tersedia untuk acara mendadak?',
+                answer: 'Ya, kami memiliki tim standby untuk kebutuhan mendesak. Hubungi admin untuk ketersediaan.'
             }
         ],
-        relatedProducts: ['cleaning-corporate', 'sales-corporate'],
-        badge: 'BUMN',
+        relatedProducts: ['jasa-pelatihan', 'jasa-pengawalan'],
+        badge: 'Premium',
         inStock: true,
         isPublished: true,
-        caseStudies: ['hospital-security-case'],
-        rabConfig: rabConfigs['security-corporate'],
+        caseStudies: [],
         metadata: {
-            seoTitle: 'Jasa Keamanan Korporat BUMN | Unit 007',
-            seoDescription: 'Solusi keamanan komprehensif dengan kontrak tahunan tetap untuk BUMN dan korporat besar. Tim keamanan profesional 24/7.',
-            seoKeywords: ['keamanan BUMN', 'security corporate', 'jasa keamanan profesional', 'keamanan 24/7']
+            seoTitle: 'Jasa Pengamanan Profesional | Koperasi Kodim 007',
+            seoDescription: 'Layanan pengamanan profesional dengan personel ex-TNI berpengalaman dari Koperasi Kodim 007.',
+            seoKeywords: ['jasa keamanan', 'pengamanan profesional', 'security ex-TNI', 'kodim 007']
         }
     },
     {
-        id: 'cleaning-corporate',
-        createdAt: '2025-01-20T10:15:00Z',
-        updatedAt: '2025-06-18T16:30:00Z',
+        id: 'jasa-pelatihan',
+        createdAt: '2025-01-20T11:15:00Z',
+        updatedAt: '2025-06-15T09:30:00Z',
         isActive: true,
-        name: 'Jasa Cleaning Service Korporat',
-        category: 'Cleaning Service',
-        slug: 'jasa-cleaning-service-korporat',
-        type: ProductType.CORPORATE,
-        price: 1500000000,
-        originalPrice: 1500000000,
+        name: 'Pelatihan Bela Diri & Disiplin Militer',
+        category: 'Jasa Khusus',
+        slug: 'pelatihan-bela-diri-disiplin-militer',
+        type: ProductType.CUSTOM,
+        price: 0, // Harga tidak ditampilkan
+        originalPrice: 0,
         discountPercentage: 0,
         rating: 4.9,
-        reviews: 34,
+        reviews: 8,
         images: [
-            'https://images.pexels.com/photos/4239119/pexels-photo-4239119.jpeg?auto=compress&cs=tinysrgb&w=800',
-            'https://images.pexels.com/photos/4239013/pexels-photo-4239013.jpeg?auto=compress&cs=tinysrgb&w=800',
-            'https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=800'
+            'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
-        description: 'Solusi cleaning service komprehensif dengan kontrak tahunan tetap untuk fasilitas besar dan kompleks. Meliputi penyediaan tim cleaning profesional dengan peralatan modern untuk menjaga standar kebersihan tinggi.',
-        shortDescription: 'Solusi cleaning service komprehensif dengan kontrak tahunan tetap untuk fasilitas besar dan kompleks.',
+        description: 'Program pelatihan bela diri dan pembentukan karakter dengan metode militer. Cocok untuk individu, kelompok, sekolah, dan perusahaan.',
+        shortDescription: 'Program pelatihan bela diri dan pembentukan karakter dengan metode militer.',
         features: [
-            'Kontrak Tahunan Tetap (Fixed Yearly Contract)',
-            'Tim Cleaning Berlapis: Cleaning Staff, Supervisor, Koordinator Area',
-            'Cakupan Layanan Lengkap: Daily cleaning, Deep cleaning, Sanitasi',
-            'Fasilitas Kompleks: Perkantoran, Rumah Sakit, Mall, Pabrik',
-            'Peralatan Modern dan Teknologi Terdepan',
-            'Manajemen Waste dan Daur Ulang',
-            'Quality Control dan Monitoring',
-            'Laporan Digital Real-time',
-            'Asuransi dan BPJS Ketenagakerjaan Lengkap',
-            'Eco-friendly Products dan Green Cleaning'
+            'Pelatihan bela diri praktis',
+            'Pembentukan mental & disiplin',
+            'Metode pelatihan militer',
+            'Instruktur ex-TNI berpengalaman',
+            'Program custom sesuai kebutuhan',
+            'Sertifikat pelatihan',
+            'Pelatihan indoor/outdoor',
+            'Follow-up program lanjutan'
         ],
         specifications: {
-            'Model Kontrak': 'Kontrak Tahunan Tetap (Fixed Yearly)',
-            'Durasi Layanan': 'Disesuaikan kebutuhan (Harian, Mingguan, Bulanan)',
-            'Struktur Tim': 'Cleaning Staff, Supervisor Area, Koordinator Lapangan',
-            'Sertifikasi': 'Cleaning Professional License, K3, Hygiene Standards',
-            'Peralatan': 'Industrial Grade Equipment, Eco-friendly Products',
-            'Laporan': 'Real-time digital dashboard dan laporan berkala',
-            'Response Time': 'Emergency cleaning dalam 1 jam',
-            'Cakupan Area': 'Unlimited sesuai kontrak'
+            'Instruktur': 'Ex-TNI bersertifikat',
+            'Durasi': 'Fleksibel sesuai program',
+            'Peserta': 'Individual/grup',
+            'Lokasi': 'Di tempat atau fasilitas kami',
+            'Sertifikat': 'Tersedia untuk peserta'
         },
         testimonials: [
             {
-                id: 'clean-test-1',
-                name: 'RSUD Ulin Banjarmasin',
+                id: 'pelatihan-test-1',
+                name: 'SMA Negeri 5 Banjarmasin',
                 rating: 5,
-                comment: 'Standar kebersihan medis selalu terjaga. Tim sangat professional dan responsif terhadap kebutuhan khusus rumah sakit.'
-            },
-            {
-                id: 'clean-test-2',
-                name: 'Mall Duta Plaza Banjarmasin',
-                rating: 5,
-                comment: 'Kebersihan mall terjaga dengan baik setiap hari. Pengunjung merasa nyaman dengan lingkungan yang bersih.'
+                comment: 'Pelatihan sangat bermanfaat untuk siswa. Metode militer membantu membentuk kedisiplinan dan kepercayaan diri.'
             }
         ],
         faqs: [
             {
-                question: 'Apakah bahan kimia yang digunakan ramah lingkungan?',
-                answer: 'Ya, kami menggunakan produk eco-friendly yang tersertifikasi dan aman untuk lingkungan namun tetap efektif untuk membersihkan.'
+                question: 'Berapa lama durasi pelatihan?',
+                answer: 'Durasi disesuaikan dengan program yang dipilih, mulai dari 1 hari hingga beberapa minggu. Hubungi admin untuk detail program.'
             },
             {
-                question: 'Bagaimana penanganan untuk area-area dengan standar kebersihan khusus seperti rumah sakit?',
-                answer: 'Kami memiliki SOP khusus untuk fasilitas medis dengan menggunakan disinfektan medis grade dan protokol kebersihan yang sesuai standar akreditasi rumah sakit.'
-            },
-            {
-                question: 'Apakah tersedia layanan deep cleaning berkala?',
-                answer: 'Ya, kami menyediakan jadwal deep cleaning berkala yang dapat disesuaikan dengan kebutuhan, biasanya dilakukan mingguan atau bulanan untuk area-area tertentu.'
+                question: 'Apakah ada batasan usia peserta?',
+                answer: 'Program dapat disesuaikan untuk berbagai usia, mulai dari remaja hingga dewasa. Konsultasikan kebutuhan dengan admin.'
             }
         ],
-        relatedProducts: ['security-corporate', 'sales-corporate'],
-        badge: 'Korporat',
+        relatedProducts: ['jasa-keamanan', 'jasa-pengawalan'],
+        badge: 'Eksklusif',
         inStock: true,
         isPublished: true,
-        caseStudies: ['mall-cleaning-case'],
-        rabConfig: rabConfigs['cleaning-corporate'],
+        caseStudies: [],
         metadata: {
-            seoTitle: 'Jasa Cleaning Service Korporat | Unit 007',
-            seoDescription: 'Solusi cleaning service komprehensif dengan kontrak tahunan tetap untuk fasilitas besar. Tim cleaning profesional dengan peralatan modern.',
-            seoKeywords: ['cleaning service korporat', 'jasa kebersihan', 'cleaning service profesional', 'kebersihan gedung']
+            seoTitle: 'Pelatihan Bela Diri Militer | Koperasi Kodim 007',
+            seoDescription: 'Program pelatihan bela diri dan disiplin militer dengan instruktur ex-TNI dari Koperasi Kodim 007.',
+            seoKeywords: ['pelatihan bela diri', 'pelatihan militer', 'disiplin militer', 'kodim 007']
         }
     },
+
+    // Lainnya Category
     {
-        id: 'sales-corporate',
-        createdAt: '2025-01-25T09:45:00Z',
-        updatedAt: '2025-06-15T11:20:00Z',
+        id: 'lainnya-001',
+        createdAt: '2025-01-21T13:45:00Z',
+        updatedAt: '2025-06-14T15:20:00Z',
         isActive: true,
-        name: 'Jasa Outsourcing Sales Korporat',
-        category: 'Outsourcing Sales',
-        slug: 'jasa-outsourcing-sales-korporat',
-        type: ProductType.CORPORATE,
-        price: 2000000000,
-        originalPrice: 2000000000,
-        discountPercentage: 0,
+        name: 'Seragam & Atribut Militer',
+        category: 'Lainnya',
+        slug: 'seragam-atribut-militer',
+        type: ProductType.INDIVIDUAL,
+        price: 350000,
+        originalPrice: 400000,
+        discountPercentage: 12.5,
         rating: 4.8,
-        reviews: 29,
+        reviews: 23,
         images: [
-            'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
-            'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800',
-            'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800'
+            'https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
-        description: 'Solusi outsourcing sales komprehensif dengan kontrak tahunan tetap untuk ekspansi bisnis korporat. Meliputi penyediaan tim sales profesional dengan strategi terukur untuk mencapai target revenue yang optimal.',
-        shortDescription: 'Solusi outsourcing sales komprehensif dengan kontrak tahunan tetap untuk ekspansi bisnis korporat.',
+        description: 'Seragam dan atribut militer berkualitas tinggi. Tersedia berbagai ukuran dan jenis seragam sesuai kebutuhan.',
+        shortDescription: 'Seragam dan atribut militer berkualitas tinggi dengan berbagai ukuran.',
         features: [
-            'Kontrak Tahunan Tetap (Fixed Yearly Contract)',
-            'Tim Sales Berlapis: Sales Executive, Sales Manager, Regional Director',
-            'Strategi Penjualan Terukur dan Target Revenue Jelas',
-            'Digital Marketing dan Online Presence Management',
-            'Lead Generation dan Customer Acquisition',
-            'CRM Implementation dan Database Management',
-            'Market Research dan Competitor Analysis',
-            'Performance Analytics dan ROI Tracking',
-            'Asuransi dan BPJS Ketenagakerjaan Lengkap',
-            'Training dan Development Program Berkelanjutan'
+            'Bahan berkualitas tinggi',
+            'Jahitan rapi dan kuat',
+            'Tersedia berbagai ukuran',
+            'Atribut lengkap',
+            'Sesuai standar militer',
+            'Tahan lama dan nyaman'
         ],
         specifications: {
-            'Model Kontrak': 'Kontrak Tahunan Tetap (Fixed Yearly)',
-            'Target Revenue': 'Disesuaikan dengan target perusahaan',
-            'Struktur Tim': 'Sales Executive, Sales Manager, Regional Director',
-            'Sertifikasi': 'Professional Sales License, Digital Marketing Certified',
-            'Tools & Platform': 'CRM System, Marketing Automation, Analytics Tools',
-            'Laporan': 'Real-time sales dashboard dan laporan performa',
-            'Response Time': 'Lead follow-up dalam 2 jam',
-            'Market Coverage': 'Regional dan nasional sesuai kontrak'
+            'Bahan': 'Drill/Ripstop premium',
+            'Ukuran': 'S, M, L, XL, XXL',
+            'Warna': 'Sesuai standar TNI',
+            'Kelengkapan': 'Seragam + atribut dasar'
         },
         testimonials: [
             {
-                id: 'sales-test-1',
-                name: 'PT Banjarmasin Port',
+                id: 'seragam-test-1',
+                name: 'Serda Agus - Anggota Kodim',
                 rating: 5,
-                comment: 'Tim sales sangat profesional dan berhasil meningkatkan revenue kami 150% dalam setahun. Strategi yang diterapkan sangat efektif.'
-            },
-            {
-                id: 'sales-test-2',
-                name: 'CV Borneo Logistics',
-                rating: 5,
-                comment: 'Ekspansi market berhasil dilakukan dengan baik. Tim sales membantu kami masuk ke segmen B2B yang sebelumnya sulit dijangkau.'
+                comment: 'Kualitas seragam bagus, bahan nyaman dan tahan lama. Harga lebih terjangkau dari toko lain.'
             }
         ],
         faqs: [
             {
-                question: 'Bagaimana sistem penentuan target penjualan?',
-                answer: 'Target penjualan ditentukan berdasarkan analisis pasar, historis penjualan, dan potensi pasar yang disepakati bersama dengan klien pada awal kontrak.'
-            },
-            {
-                question: 'Apakah tim sales akan berfokus pada area geografis tertentu?',
-                answer: 'Ya, kami dapat menyesuaikan fokus area geografis sesuai dengan target pasar yang ingin dijangkau oleh perusahaan Anda.'
-            },
-            {
-                question: 'Bagaimana dengan pelatihan product knowledge untuk tim sales?',
-                answer: 'Kami memiliki program pelatihan komprehensif untuk memastikan tim sales memahami produk/jasa klien secara mendalam sebelum terjun ke lapangan.'
+                question: 'Apakah bisa custom ukuran?',
+                answer: 'Ya, kami melayani custom ukuran dengan tambahan biaya. Silakan konsultasi dengan admin.'
             }
         ],
-        relatedProducts: ['security-corporate', 'cleaning-corporate'],
-        badge: 'Korporat',
+        relatedProducts: ['lainnya-002'],
+        badge: 'Kualitas Terjamin',
         inStock: true,
         isPublished: true,
-        caseStudies: ['corporate-sales-case'],
-        rabConfig: rabConfigs['sales-corporate'],
+        caseStudies: [],
         metadata: {
-            seoTitle: 'Jasa Outsourcing Sales Korporat | Unit 007',
-            seoDescription: 'Solusi outsourcing sales komprehensif untuk ekspansi bisnis korporat. Tim sales profesional dengan strategi terukur.',
-            seoKeywords: ['outsourcing sales', 'jasa sales korporat', 'tim sales profesional', 'strategi penjualan']
+            seoTitle: 'Seragam Atribut Militer | Koperasi Kodim 007',
+            seoDescription: 'Seragam dan atribut militer berkualitas tinggi dari Koperasi Kodim 007 Banjarmasin.',
+            seoKeywords: ['seragam militer', 'atribut TNI', 'seragam kodim', 'perlengkapan militer']
         }
     }
 ];
 
-// Sample case studies (imported from the existing case studies data)
-import caseStudiesData from './caseStudies';
-const caseStudies: CaseStudy[] = caseStudiesData.map(cs => ({
-    ...cs,
-    createdAt: '2025-01-10T08:00:00Z',
-    updatedAt: '2025-06-20T14:45:00Z',
-    isActive: true,
-    slug: cs.id,
-    isPublished: true,
-    metadata: {
-        seoTitle: cs.title + ' | Unit 007',
-        seoDescription: cs.summary
-    }
-}));
+// Sample case studies (minimal for this context)
+const caseStudies: CaseStudy[] = [];
 
 // Sample certificates data
 const certificates: Certificate[] = [
     {
-        id: 'iso-9001',
+        id: 'koperasi-license',
         createdAt: '2025-01-05T10:30:00Z',
         updatedAt: '2025-01-05T10:30:00Z',
         isActive: true,
-        title: 'ISO 9001:2015 Quality Management System',
-        category: 'quality',
-        issuer: 'International Organization for Standardization',
-        issueDate: '2024-01-15',
-        expiryDate: '2027-01-15',
-        description: 'Sertifikat sistem manajemen mutu yang memastikan konsistensi layanan berkualitas tinggi.',
+        title: 'Badan Hukum Koperasi',
+        category: 'legal',
+        issuer: 'Kementerian Koperasi dan UKM RI',
+        issueDate: '2020-03-15',
+        expiryDate: '2030-03-15',
+        description: 'Badan hukum koperasi yang sah berdasarkan undang-undang koperasi Indonesia.',
         image: 'https://images.pexels.com/photos/6801647/pexels-photo-6801647.jpeg?auto=compress&cs=tinysrgb&w=800',
         status: 'active',
         documentUrl: '#',
-        isInternational: true
+        isInternational: false
     },
     {
-        id: 'iso-14001',
+        id: 'kodim-partnership',
         createdAt: '2025-01-05T11:15:00Z',
         updatedAt: '2025-01-05T11:15:00Z',
         isActive: true,
-        title: 'ISO 14001:2015 Environmental Management',
-        category: 'environment',
-        issuer: 'International Organization for Standardization',
-        issueDate: '2024-02-20',
-        expiryDate: '2027-02-20',
-        description: 'Sertifikat manajemen lingkungan untuk praktik bisnis yang ramah lingkungan.',
-        image: 'https://images.pexels.com/photos/3850512/pexels-photo-3850512.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: 'Surat Kemitraan Kodim 007',
+        category: 'partnership',
+        issuer: 'Komando Distrik Militer 007 Banjarmasin',
+        issueDate: '2020-04-01',
+        expiryDate: '2025-04-01',
+        description: 'Surat kemitraan resmi dengan Kodim 007 Banjarmasin untuk operasional koperasi.',
+        image: 'https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800',
         status: 'active',
         documentUrl: '#',
-        isInternational: true
-    },
-    {
-        id: 'ohsas-18001',
-        createdAt: '2025-01-05T12:00:00Z',
-        updatedAt: '2025-01-05T12:00:00Z',
-        isActive: true,
-        title: 'OHSAS 18001 Occupational Health & Safety',
-        category: 'safety',
-        issuer: 'British Standards Institution',
-        issueDate: '2024-03-10',
-        expiryDate: '2027-03-10',
-        description: 'Sertifikat sistem manajemen keselamatan dan kesehatan kerja.',
-        image: 'https://images.pexels.com/photos/5792641/pexels-photo-5792641.jpeg?auto=compress&cs=tinysrgb&w=800',
-        status: 'active',
-        documentUrl: '#',
-        isInternational: true
+        isInternational: false
     }
 ];
 
 // Sample legal documents data
 const legalDocuments: LegalDocument[] = [
     {
-        id: 'siup',
+        id: 'akta-koperasi',
         createdAt: '2025-01-02T09:00:00Z',
         updatedAt: '2025-01-02T09:00:00Z',
         isActive: true,
-        title: 'Surat Izin Usaha Perdagangan (SIUP)',
-        type: 'business-license',
-        issueDate: '2023-06-10',
-        expiryDate: '2028-06-10',
-        issuingAuthority: 'Dinas Perindustrian dan Perdagangan Kota Banjarmasin',
-        documentNumber: 'SIUP-123/456/VII/2023',
-        description: 'Izin usaha resmi yang diberikan kepada perusahaan untuk melakukan kegiatan perdagangan.',
-        image: 'https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: 'Akta Pendirian Koperasi',
+        type: 'establishment',
+        issueDate: '2020-03-15',
+        issuingAuthority: 'Kementerian Koperasi dan UKM RI',
+        documentNumber: 'KEP-001/KODIM007/III/2020',
+        description: 'Akta pendirian Koperasi Kodim 007 yang disahkan oleh Kementerian Koperasi dan UKM.',
         documentUrl: '#',
         status: 'active'
     },
     {
-        id: 'tdp',
+        id: 'siup-koperasi',
         createdAt: '2025-01-02T09:30:00Z',
         updatedAt: '2025-01-02T09:30:00Z',
         isActive: true,
-        title: 'Tanda Daftar Perusahaan (TDP)',
-        type: 'business-registration',
-        issueDate: '2023-06-15',
-        expiryDate: '2028-06-15',
-        issuingAuthority: 'Dinas Perindustrian dan Perdagangan Kota Banjarmasin',
-        documentNumber: 'TDP-789/101/VII/2023',
-        description: 'Bukti bahwa perusahaan telah terdaftar resmi di pemerintahan.',
-        documentUrl: '#',
-        status: 'active'
-    },
-    {
-        id: 'npwp',
-        createdAt: '2025-01-02T10:00:00Z',
-        updatedAt: '2025-01-02T10:00:00Z',
-        isActive: true,
-        title: 'Nomor Pokok Wajib Pajak (NPWP) Perusahaan',
-        type: 'tax',
-        issueDate: '2023-05-20',
-        issuingAuthority: 'Direktorat Jenderal Pajak',
-        documentNumber: '12.345.678.9-012.000',
-        description: 'Nomor identitas wajib pajak sebagai sarana administrasi perpajakan.',
-        documentUrl: '#',
-        status: 'active'
-    },
-    {
-        id: 'akta',
-        createdAt: '2025-01-02T10:30:00Z',
-        updatedAt: '2025-01-02T10:30:00Z',
-        isActive: true,
-        title: 'Akta Pendirian Perusahaan',
-        type: 'establishment',
-        issueDate: '2023-04-10',
-        issuingAuthority: 'Notaris Publik Banjarmasin',
-        documentNumber: '45/NOT/IV/2023',
-        description: 'Dokumen resmi pendirian perusahaan yang disahkan oleh notaris.',
-        documentUrl: '#',
-        status: 'active'
-    },
-    {
-        id: 'sbu-security',
-        createdAt: '2025-01-02T11:00:00Z',
-        updatedAt: '2025-01-02T11:00:00Z',
-        isActive: true,
-        title: 'Sertifikat Badan Usaha (SBU) Jasa Keamanan',
-        type: 'business-certification',
-        issueDate: '2024-01-05',
-        expiryDate: '2027-01-05',
-        issuingAuthority: 'Polri dan Asosiasi Badan Usaha Jasa Pengamanan Indonesia',
-        documentNumber: 'SBU-SEC/123/I/2024',
-        description: 'Sertifikat badan usaha untuk layanan jasa keamanan profesional.',
-        image: 'https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800',
+        title: 'Surat Izin Usaha Perdagangan Koperasi',
+        type: 'business-license',
+        issueDate: '2020-04-10',
+        expiryDate: '2025-04-10',
+        issuingAuthority: 'Dinas Koperasi dan UKM Kota Banjarmasin',
+        documentNumber: 'SIUP-KOP/007/IV/2020',
+        description: 'Izin usaha perdagangan untuk kegiatan koperasi sesuai dengan peraturan yang berlaku.',
         documentUrl: '#',
         status: 'active'
     }

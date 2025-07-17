@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Shield, Users, Briefcase, ShoppingCart, Star, Search, Grid, List, CheckCircle, FileText } from 'lucide-react';
+import { Shield, Package, ShoppingCart, Star, Search, Grid, List, CheckCircle, FileText, MessageCircle, Phone } from 'lucide-react';
 import { CartItem } from '../data/unifiedSchema';
 
 interface ProductCatalogProps {
@@ -17,54 +17,118 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
 
   const products = [
     {
-      id: 'security-corporate',
-      name: 'Jasa Keamanan Korporat BUMN',
-      category: 'security',
-      price: 3000000000,
-      originalPrice: 3000000000,
-      rating: 5.0,
-      reviews: 23,
-      image: 'https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Solusi keamanan komprehensif dengan kontrak tahunan tetap untuk BUMN dan korporat besar.',
-      features: ['Kontrak Tahunan Tetap', 'Tim Keamanan Profesional', 'Struktur Tim Berlapis', 'Cakupan 24/7', 'Sistem Monitoring Terintegrasi'],
-      badge: 'BUMN',
-      inStock: true
-    },
-    {
-      id: 'cleaning-corporate',
-      name: 'Jasa Cleaning Service Korporat',
-      category: 'cleaning',
-      price: 1500000000,
-      originalPrice: 1500000000,
-      rating: 4.9,
-      reviews: 34,
-      image: 'https://images.pexels.com/photos/4239119/pexels-photo-4239119.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Solusi cleaning service komprehensif dengan kontrak tahunan tetap untuk fasilitas besar dan kompleks.',
-      features: ['Kontrak Tahunan Tetap', 'Tim Cleaning Profesional', 'Peralatan Modern', 'Sanitasi Berkala', 'Manajemen Waste'],
-      badge: 'Korporat',
-      inStock: true
-    },
-    {
-      id: 'sales-corporate',
-      name: 'Jasa Outsourcing Sales Korporat',
-      category: 'sales',
-      price: 2000000000,
-      originalPrice: 2000000000,
+      id: 'atk-001',
+      name: 'Paket ATK Lengkap Kantor',
+      category: 'ATK',
+      price: 150000,
+      originalPrice: 180000,
       rating: 4.8,
-      reviews: 29,
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Solusi outsourcing sales komprehensif dengan kontrak tahunan tetap untuk ekspansi bisnis korporat.',
-      features: ['Kontrak Tahunan Tetap', 'Tim Sales Profesional', 'Strategi Terukur', 'Digital Marketing', 'Target Revenue'],
-      badge: 'Korporat',
-      inStock: true
+      reviews: 45,
+      image: 'https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Paket lengkap alat tulis kantor berkualitas untuk kebutuhan administrasi sehari-hari.',
+      features: ['Pulpen gel 12 pcs', 'Pensil 2B 6 pcs', 'Kertas HVS A4 1 rim', 'Stapler + isi'],
+      badge: 'Terlaris',
+      inStock: true,
+      showPrice: true
+    },
+    {
+      id: 'atk-002',
+      name: 'Kertas HVS A4 80gsm',
+      category: 'ATK',
+      price: 45000,
+      originalPrice: 55000,
+      rating: 4.9,
+      reviews: 78,
+      image: 'https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Kertas HVS A4 berkualitas tinggi 80gsm, putih bersih, cocok untuk print dokumen.',
+      features: ['Ukuran A4 standar', 'Gramatur 80gsm', '500 lembar per rim', 'Tidak mudah macet'],
+      badge: 'Hemat',
+      inStock: true,
+      showPrice: true
+    },
+    {
+      id: 'sembako-001',
+      name: 'Beras Premium 5kg',
+      category: 'Sembako',
+      price: 65000,
+      originalPrice: 75000,
+      rating: 4.7,
+      reviews: 156,
+      image: 'https://images.pexels.com/photos/33239/wheat-field-wheat-yellow-grain.jpg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Beras premium kualitas terbaik, pulen, wangi, dan bergizi tinggi dari petani lokal.',
+      features: ['Beras premium grade A', 'Pulen dan wangi alami', 'Bebas kutu dan kotoran', 'Kemasan higienis 5kg'],
+      badge: 'Populer',
+      inStock: true,
+      showPrice: true
+    },
+    {
+      id: 'sembako-002',
+      name: 'Minyak Goreng 2L',
+      category: 'Sembako',
+      price: 28000,
+      originalPrice: 32000,
+      rating: 4.6,
+      reviews: 89,
+      image: 'https://images.pexels.com/photos/4110256/pexels-photo-4110256.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Minyak goreng berkualitas tinggi, jernih, tidak berbau tengik.',
+      features: ['Minyak goreng premium 2L', 'Jernih dan tidak berbau', 'Tahan panas tinggi', 'Sertifikat BPOM'],
+      badge: 'Hemat',
+      inStock: true,
+      showPrice: true
+    },
+    {
+      id: 'jasa-keamanan',
+      name: 'Jasa Pengamanan & Keamanan Profesional',
+      category: 'Jasa Khusus',
+      price: 0,
+      originalPrice: 0,
+      rating: 5.0,
+      reviews: 12,
+      image: 'https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Layanan pengamanan profesional dengan personel berpengalaman militer.',
+      features: ['Personel ex-TNI/Polri', 'Pengamanan acara VIP', 'Keamanan fasilitas 24/7', 'Konsultasi keamanan'],
+      badge: 'Premium',
+      inStock: true,
+      showPrice: false
+    },
+    {
+      id: 'jasa-pelatihan',
+      name: 'Pelatihan Bela Diri & Disiplin Militer',
+      category: 'Jasa Khusus',
+      price: 0,
+      originalPrice: 0,
+      rating: 4.9,
+      reviews: 8,
+      image: 'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Program pelatihan bela diri dan pembentukan karakter dengan metode militer.',
+      features: ['Pelatihan bela diri praktis', 'Pembentukan mental & disiplin', 'Instruktur ex-TNI', 'Sertifikat pelatihan'],
+      badge: 'Eksklusif',
+      inStock: true,
+      showPrice: false
+    },
+    {
+      id: 'lainnya-001',
+      name: 'Seragam & Atribut Militer',
+      category: 'Lainnya',
+      price: 350000,
+      originalPrice: 400000,
+      rating: 4.8,
+      reviews: 23,
+      image: 'https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Seragam dan atribut militer berkualitas tinggi dengan berbagai ukuran.',
+      features: ['Bahan berkualitas tinggi', 'Jahitan rapi dan kuat', 'Berbagai ukuran', 'Atribut lengkap'],
+      badge: 'Kualitas Terjamin',
+      inStock: true,
+      showPrice: true
     }
   ];
 
   const categories = [
     { id: 'all', name: 'Semua Produk', icon: Grid },
-    { id: 'security', name: 'Jasa Keamanan', icon: Shield },
-    { id: 'cleaning', name: 'Cleaning Service', icon: Users },
-    { id: 'sales', name: 'Outsourcing Sales', icon: Briefcase }
+    { id: 'ATK', name: 'ATK', icon: FileText },
+    { id: 'Sembako', name: 'Sembako', icon: Package },
+    { id: 'Jasa Khusus', name: 'Jasa Khusus', icon: Shield },
+    { id: 'Lainnya', name: 'Lainnya', icon: CheckCircle }
   ];
 
   const filteredProducts = products.filter(product => {
@@ -104,8 +168,8 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
       case 'Populer': return 'bg-blue-500';
       case 'Premium': return 'bg-purple-500';
       case 'Hemat': return 'bg-green-500';
-      case 'BUMN': return 'bg-indigo-600';
-      case 'Korporat': return 'bg-slate-600';
+      case 'Eksklusif': return 'bg-indigo-600';
+      case 'Kualitas Terjamin': return 'bg-slate-600';
       default: return 'bg-gray-500';
     }
   };
@@ -116,7 +180,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
         {!isHomePage && (
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-slate-800 mb-4">Katalog Produk</h1>
-            <p className="text-lg text-slate-600">Temukan layanan profesional terbaik untuk kebutuhan bisnis Anda</p>
+            <p className="text-lg text-slate-600">Temukan berbagai produk ATK, sembako, dan jasa khusus dengan harga terjangkau</p>
           </div>
         )}
 
@@ -126,8 +190,8 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
               Katalog Produk Unggulan
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Pilih dari berbagai paket layanan profesional yang telah disesuaikan
-              dengan kebutuhan bisnis modern.
+              Pilih dari berbagai produk ATK, sembako berkualitas, dan jasa khusus profesional
+              dengan harga terjangkau dari Koperasi Kodim 007.
             </p>
           </div>
         )}
@@ -143,7 +207,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                   placeholder="Cari produk atau layanan..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
                 />
               </div>
 
@@ -151,7 +215,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
                 >
                   <option value="name">Urutkan: Nama</option>
                   <option value="price-low">Harga: Rendah ke Tinggi</option>
@@ -162,13 +226,13 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                 <div className="flex border border-slate-300 rounded-lg overflow-hidden">
                   <button
                     onClick={() => setViewMode('grid')}
-                    className={`p-3 ${viewMode === 'grid' ? 'bg-blue-600 text-white' : 'bg-white text-slate-600'}`}
+                    className={`p-3 ${viewMode === 'grid' ? 'bg-green-600 text-white' : 'bg-white text-slate-600'}`}
                   >
                     <Grid className="h-5 w-5" />
                   </button>
                   <button
                     onClick={() => setViewMode('list')}
-                    className={`p-3 ${viewMode === 'list' ? 'bg-blue-600 text-white' : 'bg-white text-slate-600'}`}
+                    className={`p-3 ${viewMode === 'list' ? 'bg-green-600 text-white' : 'bg-white text-slate-600'}`}
                   >
                     <List className="h-5 w-5" />
                   </button>
@@ -185,7 +249,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                     key={category.id}
                     onClick={() => setSelectedCategory(category.id)}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-colors ${selectedCategory === category.id
-                      ? 'bg-blue-600 text-white'
+                      ? 'bg-green-600 text-white'
                       : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                       }`}
                   >
@@ -231,7 +295,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
 
               <div className={`p-6 ${viewMode === 'list' ? 'flex-1' : ''}`}>
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-bold text-slate-800 group-hover:text-green-600 transition-colors">
                     {product.name}
                   </h3>
                 </div>
@@ -243,22 +307,32 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                 <div className="space-y-2 mb-4">
                   {product.features.slice(0, 3).map((feature, index) => (
                     <div key={index} className="flex items-center space-x-2 text-sm">
-                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                      <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
                       <span className="text-slate-600">{feature}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="flex items-center space-x-2 mb-4">
-                  <span className="text-2xl font-bold text-blue-600">
-                    {formatPrice(product.price)}
-                  </span>
-                  {product.originalPrice > product.price && (
-                    <span className="text-lg text-slate-400 line-through">
-                      {formatPrice(product.originalPrice)}
-                    </span>
+                {/* Price Section */}
+                <div className="mb-4">
+                  {product.showPrice ? (
+                    <div className="flex items-center space-x-2">
+                      <span className="text-2xl font-bold text-green-600">
+                        {formatPrice(product.price)}
+                      </span>
+                      {product.originalPrice > product.price && (
+                        <span className="text-lg text-slate-400 line-through">
+                          {formatPrice(product.originalPrice)}
+                        </span>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="text-center py-2">
+                      <span className="text-lg font-bold text-slate-600 bg-slate-100 px-4 py-2 rounded-lg">
+                        Harga Sesuai Permintaan
+                      </span>
+                    </div>
                   )}
-                  <span className="text-sm text-slate-600">/Tahun</span>
                 </div>
 
                 <div className="flex items-center space-x-2 mb-6">
@@ -276,6 +350,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                   <span className="text-sm text-slate-600">({product.reviews} ulasan)</span>
                 </div>
 
+                {/* Action Buttons */}
                 <div className="flex gap-3">
                   <button
                     onClick={() => onProductSelect(product.id)}
@@ -283,20 +358,30 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                   >
                     Lihat Detail
                   </button>
-                  <button
-                    onClick={() => onAddToCart({
-                      id: `cart-${Date.now()}`,
-                      productId: product.id,
-                      name: product.name,
-                      price: product.price,
-                      duration: 1,
-                      image: product.image,
-                      category: product.category
-                    })}
-                    className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-lg transition-colors"
-                  >
-                    <ShoppingCart className="h-5 w-5" />
-                  </button>
+                  
+                  {product.showPrice ? (
+                    <button
+                      onClick={() => onAddToCart({
+                        id: `cart-${Date.now()}`,
+                        productId: product.id,
+                        name: product.name,
+                        price: product.price,
+                        duration: 1,
+                        image: product.image,
+                        category: product.category
+                      })}
+                      className="bg-green-600 hover:bg-green-700 text-white p-3 rounded-lg transition-colors"
+                    >
+                      <ShoppingCart className="h-5 w-5" />
+                    </button>
+                  ) : (
+                    <button
+                      className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-lg transition-colors"
+                      title="Hubungi Admin"
+                    >
+                      <MessageCircle className="h-5 w-5" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
@@ -308,7 +393,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
             <div className="text-center mt-12">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center space-x-2"
+                className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center space-x-2"
               >
                 <span>Lihat Semua Produk</span>
                 <ShoppingCart className="h-5 w-5" />
@@ -316,51 +401,51 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
             </div>
 
             {/* Credibility CTA Section */}
-            <div className="mt-16 bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 lg:p-12">
+            <div className="mt-16 bg-gradient-to-br from-slate-50 to-green-50 rounded-2xl p-8 lg:p-12">
               <div className="max-w-4xl mx-auto text-center">
                 <div className="flex justify-center mb-6">
-                  <div className="bg-blue-600 p-4 rounded-full">
+                  <div className="bg-green-600 p-4 rounded-full">
                     <Shield className="h-8 w-8 text-white" />
                   </div>
                 </div>
 
                 <h3 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-4">
-                  Terpercaya & Bersertifikat Internasional
+                  Koperasi Resmi & Terpercaya
                 </h3>
 
                 <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-                  Dengan sertifikasi ISO, OHSAS, dan berbagai lisensi resmi, kami menjamin kualitas
-                  layanan terbaik untuk kebutuhan korporat Anda.
+                  Didukung oleh Kodim 007 Banjarmasin dengan legalitas lengkap dan pelayanan terbaik
+                  untuk masyarakat umum dan anggota TNI.
                 </p>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                   <div className="text-center">
                     <div className="bg-white rounded-lg p-4 shadow-sm mb-3">
-                      <Shield className="h-6 w-6 text-blue-600 mx-auto" />
+                      <Shield className="h-6 w-6 text-green-600 mx-auto" />
                     </div>
-                    <div className="text-sm font-medium text-slate-700">ISO 9001:2015</div>
-                    <div className="text-xs text-slate-500">Quality Management</div>
+                    <div className="text-sm font-medium text-slate-700">Badan Hukum</div>
+                    <div className="text-xs text-slate-500">Koperasi Resmi</div>
                   </div>
                   <div className="text-center">
                     <div className="bg-white rounded-lg p-4 shadow-sm mb-3">
                       <CheckCircle className="h-6 w-6 text-green-600 mx-auto" />
                     </div>
-                    <div className="text-sm font-medium text-slate-700">OHSAS 18001</div>
-                    <div className="text-xs text-slate-500">Health & Safety</div>
+                    <div className="text-sm font-medium text-slate-700">SIUP</div>
+                    <div className="text-xs text-slate-500">Izin Usaha</div>
                   </div>
                   <div className="text-center">
                     <div className="bg-white rounded-lg p-4 shadow-sm mb-3">
-                      <Star className="h-6 w-6 text-yellow-500 mx-auto" />
+                      <FileText className="h-6 w-6 text-green-600 mx-auto" />
                     </div>
-                    <div className="text-sm font-medium text-slate-700">SBU Grade 7</div>
-                    <div className="text-xs text-slate-500">Business Entity</div>
+                    <div className="text-sm font-medium text-slate-700">Kemitraan</div>
+                    <div className="text-xs text-slate-500">Kodim 007</div>
                   </div>
                   <div className="text-center">
                     <div className="bg-white rounded-lg p-4 shadow-sm mb-3">
-                      <FileText className="h-6 w-6 text-purple-600 mx-auto" />
+                      <Package className="h-6 w-6 text-green-600 mx-auto" />
                     </div>
-                    <div className="text-sm font-medium text-slate-700">Lisensi Resmi</div>
-                    <div className="text-xs text-slate-500">Government Licensed</div>
+                    <div className="text-sm font-medium text-slate-700">Kualitas</div>
+                    <div className="text-xs text-slate-500">Terjamin</div>
                   </div>
                 </div>
 
@@ -370,7 +455,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                     className="bg-slate-800 hover:bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center space-x-2 shadow-lg"
                   >
                     <FileText className="h-5 w-5" />
-                    <span>Lihat Semua Sertifikat & Legalitas</span>
+                    <span>Lihat Legalitas Lengkap</span>
                   </button>
                 )}
               </div>
