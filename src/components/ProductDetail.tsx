@@ -40,7 +40,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
       specifications: {
         'Isi Paket': '10 jenis ATK lengkap',
         'Kualitas': 'Grade A, tahan lama',
-        'Kemasan': 'Box eksklusif Koperasi Kodim 007',
+        'Kemasan': 'Box eksklusif PRIMER KOPERASI KARTIKA BANJARMASIN',
         'Garansi': '30 hari tukar barang rusak',
         'Pengiriman': 'Gratis ongkir area Banjarmasin'
       },

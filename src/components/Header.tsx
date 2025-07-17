@@ -52,7 +52,7 @@ const Header: React.FC = () => {
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="h-4 w-4" />
-              <span>Kodim 007 Banjarmasin, Kalimantan Selatan</span>
+              <span>PRIMER KOPERASI KARTIKA BANJARMASIN, Kalimantan Selatan</span>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ const Header: React.FC = () => {
               <Shield className="h-8 w-8 text-white" />
             </div>
             <div>
-              <h1 className="text-xl sm:text-2xl font-bold text-slate-800">Koperasi Kodim 007</h1>
+              <h1 className="text-xl sm:text-2xl font-bold text-slate-800">PRIMER KOPERASI KARTIKA BANJARMASIN</h1>
               <p className="text-xs sm:text-sm text-slate-600 hidden sm:block">E-Catalog Resmi Banjarmasin</p>
             </div>
           </button>

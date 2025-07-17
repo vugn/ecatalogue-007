@@ -191,7 +191,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Pilih dari berbagai produk ATK, sembako berkualitas, dan jasa khusus profesional
-              dengan harga terjangkau dari Koperasi Kodim 007.
+              dengan harga terjangkau dari PRIMER KOPERASI KARTIKA BANJARMASIN.
             </p>
           </div>
         )}
@@ -414,7 +414,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                 </h3>
 
                 <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-                  Didukung oleh Kodim 007 Banjarmasin dengan legalitas lengkap dan pelayanan terbaik
+                  Didukung oleh PRIMER KOPERASI KARTIKA BANJARMASIN dengan legalitas lengkap dan pelayanan terbaik
                   untuk masyarakat umum dan anggota TNI.
                 </p>
 
@@ -438,7 +438,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                       <FileText className="h-6 w-6 text-blue-600 mx-auto" />
                     </div>
                     <div className="text-sm font-medium text-slate-700">Kemitraan</div>
-                    <div className="text-xs text-slate-500">Kodim 007</div>
+                    <div className="text-xs text-slate-500">PRIMER KOPERASI KARTIKA</div>
                   </div>
                   <div className="text-center">
                     <div className="bg-white rounded-lg p-4 shadow-sm mb-3">

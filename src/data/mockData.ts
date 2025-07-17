@@ -7,7 +7,7 @@ import {
     ProductType
 } from './unifiedSchema';
 
-// Sample product data for Koperasi Kodim 007
+// Sample product data for PRIMER KOPERASI KARTIKA BANJARMASIN
 const products: Product[] = [
     // ATK (Alat Tulis Kantor) Products
     {
@@ -45,7 +45,7 @@ const products: Product[] = [
         specifications: {
             'Isi Paket': '10 jenis ATK lengkap',
             'Kualitas': 'Grade A, tahan lama',
-            'Kemasan': 'Box eksklusif Koperasi Kodim 007',
+            'Kemasan': 'Box eksklusif PRIMER KOPERASI KARTIKA BANJARMASIN',
             'Garansi': '30 hari tukar barang rusak',
             'Pengiriman': 'Gratis ongkir area Banjarmasin'
         },
@@ -79,8 +79,8 @@ const products: Product[] = [
         isPublished: true,
         caseStudies: [],
         metadata: {
-            seoTitle: 'Paket ATK Lengkap Kantor | Koperasi Kodim 007',
-            seoDescription: 'Paket ATK lengkap berkualitas dengan harga terjangkau dari Koperasi Kodim 007 Banjarmasin.',
+            seoTitle: 'Paket ATK Lengkap Kantor | PRIMER KOPERASI KARTIKA BANJARMASIN',
+            seoDescription: 'Paket ATK lengkap berkualitas dengan harga terjangkau dari PRIMER KOPERASI KARTIKA BANJARMASIN.',
             seoKeywords: ['ATK murah', 'alat tulis kantor', 'koperasi kodim', 'ATK lengkap']
         }
     },
@@ -138,8 +138,8 @@ const products: Product[] = [
         isPublished: true,
         caseStudies: [],
         metadata: {
-            seoTitle: 'Kertas HVS A4 80gsm Murah | Koperasi Kodim 007',
-            seoDescription: 'Kertas HVS A4 80gsm berkualitas tinggi dengan harga terjangkau dari Koperasi Kodim 007.',
+            seoTitle: 'Kertas HVS A4 80gsm Murah | PRIMER KOPERASI KARTIKA BANJARMASIN',
+            seoDescription: 'Kertas HVS A4 80gsm berkualitas tinggi dengan harga terjangkau dari PRIMER KOPERASI KARTIKA BANJARMASIN.',
             seoKeywords: ['kertas HVS', 'kertas A4', 'kertas murah', 'koperasi kodim']
         }
     },
@@ -210,8 +210,8 @@ const products: Product[] = [
         isPublished: true,
         caseStudies: [],
         metadata: {
-            seoTitle: 'Beras Premium 5kg Murah | Koperasi Kodim 007',
-            seoDescription: 'Beras premium kualitas terbaik dengan harga terjangkau dari Koperasi Kodim 007 Banjarmasin.',
+            seoTitle: 'Beras Premium 5kg Murah | PRIMER KOPERASI KARTIKA BANJARMASIN',
+            seoDescription: 'Beras premium kualitas terbaik dengan harga terjangkau dari PRIMER KOPERASI KARTIKA BANJARMASIN.',
             seoKeywords: ['beras murah', 'beras premium', 'sembako murah', 'koperasi kodim']
         }
     },
@@ -268,8 +268,8 @@ const products: Product[] = [
         isPublished: true,
         caseStudies: [],
         metadata: {
-            seoTitle: 'Minyak Goreng 2L Murah | Koperasi Kodim 007',
-            seoDescription: 'Minyak goreng berkualitas tinggi dengan harga terjangkau dari Koperasi Kodim 007.',
+            seoTitle: 'Minyak Goreng 2L Murah | PRIMER KOPERASI KARTIKA BANJARMASIN',
+            seoDescription: 'Minyak goreng berkualitas tinggi dengan harga terjangkau dari PRIMER KOPERASI KARTIKA BANJARMASIN.',
             seoKeywords: ['minyak goreng murah', 'minyak goreng 2L', 'sembako murah']
         }
     },
@@ -336,9 +336,9 @@ const products: Product[] = [
         isPublished: true,
         caseStudies: [],
         metadata: {
-            seoTitle: 'Jasa Pengamanan Profesional | Koperasi Kodim 007',
-            seoDescription: 'Layanan pengamanan profesional dengan personel ex-TNI berpengalaman dari Koperasi Kodim 007.',
-            seoKeywords: ['jasa keamanan', 'pengamanan profesional', 'security ex-TNI', 'kodim 007']
+            seoTitle: 'Jasa Pengamanan Profesional | PRIMER KOPERASI KARTIKA BANJARMASIN',
+            seoDescription: 'Layanan pengamanan profesional dengan personel ex-TNI berpengalaman dari PRIMER KOPERASI KARTIKA BANJARMASIN.',
+            seoKeywords: ['jasa keamanan', 'pengamanan profesional', 'security ex-TNI', 'kartika banjarmasin']
         }
     },
     {
@@ -402,9 +402,9 @@ const products: Product[] = [
         isPublished: true,
         caseStudies: [],
         metadata: {
-            seoTitle: 'Pelatihan Bela Diri Militer | Koperasi Kodim 007',
-            seoDescription: 'Program pelatihan bela diri dan disiplin militer dengan instruktur ex-TNI dari Koperasi Kodim 007.',
-            seoKeywords: ['pelatihan bela diri', 'pelatihan militer', 'disiplin militer', 'kodim 007']
+            seoTitle: 'Pelatihan Bela Diri Militer | PRIMER KOPERASI KARTIKA BANJARMASIN',
+            seoDescription: 'Program pelatihan bela diri dan disiplin militer dengan instruktur ex-TNI dari PRIMER KOPERASI KARTIKA BANJARMASIN.',
+            seoKeywords: ['pelatihan bela diri', 'pelatihan militer', 'disiplin militer', 'kartika banjarmasin']
         }
     },
 
@@ -462,8 +462,8 @@ const products: Product[] = [
         isPublished: true,
         caseStudies: [],
         metadata: {
-            seoTitle: 'Seragam Atribut Militer | Koperasi Kodim 007',
-            seoDescription: 'Seragam dan atribut militer berkualitas tinggi dari Koperasi Kodim 007 Banjarmasin.',
+            seoTitle: 'Seragam Atribut Militer | PRIMER KOPERASI KARTIKA BANJARMASIN',
+            seoDescription: 'Seragam dan atribut militer berkualitas tinggi dari PRIMER KOPERASI KARTIKA BANJARMASIN.',
             seoKeywords: ['seragam militer', 'atribut TNI', 'seragam kodim', 'perlengkapan militer']
         }
     }
@@ -495,12 +495,12 @@ const certificates: Certificate[] = [
         createdAt: '2025-01-05T11:15:00Z',
         updatedAt: '2025-01-05T11:15:00Z',
         isActive: true,
-        title: 'Surat Kemitraan Kodim 007',
+        title: 'Surat Kemitraan PRIMER KOPERASI KARTIKA BANJARMASIN',
         category: 'partnership',
         issuer: 'Komando Distrik Militer 007 Banjarmasin',
         issueDate: '2020-04-01',
         expiryDate: '2025-04-01',
-        description: 'Surat kemitraan resmi dengan Kodim 007 Banjarmasin untuk operasional koperasi.',
+        description: 'Surat kemitraan resmi dengan PRIMER KOPERASI KARTIKA BANJARMASIN untuk operasional koperasi.',
         image: 'https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800',
         status: 'active',
         documentUrl: '#',
@@ -520,7 +520,7 @@ const legalDocuments: LegalDocument[] = [
         issueDate: '2020-03-15',
         issuingAuthority: 'Kementerian Koperasi dan UKM RI',
         documentNumber: 'KEP-001/KODIM007/III/2020',
-        description: 'Akta pendirian Koperasi Kodim 007 yang disahkan oleh Kementerian Koperasi dan UKM.',
+        description: 'Akta pendirian PRIMER KOPERASI KARTIKA BANJARMASIN yang disahkan oleh Kementerian Koperasi dan UKM.',
         documentUrl: '#',
         status: 'active'
     },

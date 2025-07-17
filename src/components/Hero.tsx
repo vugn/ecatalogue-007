@@ -14,17 +14,17 @@ const Hero: React.FC<HeroProps> = ({ onCatalogClick, onCertificatesClick }) => {
           <div>
             <div className="inline-flex items-center bg-blue-600/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-6">
               <Shield className="h-4 w-4 mr-2" />
-              E-Catalog Resmi Koperasi Kodim 007
+              E-Catalog Resmi PRIMER KOPERASI KARTIKA BANJARMASIN
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Koperasi Kodim 007
-              <span className="block text-blue-300">Banjarmasin</span>
+              PRIMER KOPERASI KARTIKA
+              <span className="block text-blue-300">BANJARMASIN</span>
             </h1>
 
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
               Melayani kebutuhan ATK, sembako, dan jasa khusus dengan harga terjangkau.
-              Terpercaya untuk masyarakat umum dan anggota Kodim 007 Banjarmasin.
+              Terpercaya untuk masyarakat umum dan anggota PRIMER KOPERASI KARTIKA BANJARMASIN.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -131,7 +131,7 @@ const Hero: React.FC<HeroProps> = ({ onCatalogClick, onCertificatesClick }) => {
               Koperasi Resmi & Terpercaya
             </h3>
             <p className="text-blue-100 max-w-2xl mx-auto">
-              Didukung oleh Kodim 007 Banjarmasin dengan legalitas lengkap dan pelayanan terbaik
+              Didukung oleh PRIMER KOPERASI KARTIKA BANJARMASIN dengan legalitas lengkap dan pelayanan terbaik
             </p>
           </div>
 
@@ -155,7 +155,7 @@ const Hero: React.FC<HeroProps> = ({ onCatalogClick, onCertificatesClick }) => {
                 <Award className="h-8 w-8 text-white mx-auto" />
               </div>
               <div className="text-sm text-blue-200">Kemitraan</div>
-              <div className="text-xs text-blue-300">Kodim 007</div>
+              <div className="text-xs text-blue-300">PRIMER KOPERASI KARTIKA</div>
             </div>
             <div className="text-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-3">
