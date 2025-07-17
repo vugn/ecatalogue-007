@@ -37,7 +37,7 @@ const Header: React.FC = () => {
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
       {/* Top Bar */}
-      <div className="bg-green-800 text-white py-2">
+      <div className="bg-blue-800 text-white py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm space-y-2 sm:space-y-0">
             <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-1 sm:space-y-0">
@@ -66,7 +66,7 @@ const Header: React.FC = () => {
             onClick={() => handleNavigation('/')}
             className="flex items-center space-x-3 text-left"
           >
-            <div className="bg-green-600 p-2 rounded-lg">
+            <div className="bg-blue-600 p-2 rounded-lg">
               <Shield className="h-8 w-8 text-white" />
             </div>
             <div>
@@ -82,8 +82,8 @@ const Header: React.FC = () => {
                 key={item.path}
                 onClick={() => handleNavigation(item.path)}
                 className={`text-sm font-medium transition-colors ${isActivePath(item.path)
-                    ? 'text-green-600 border-b-2 border-green-600 pb-1'
-                    : 'text-slate-700 hover:text-green-600'
+                  ? 'text-blue-600 border-b-2 border-blue-600 pb-1'
+                  : 'text-slate-700 hover:text-blue-600'
                   }`}
               >
                 {item.label}
@@ -92,7 +92,7 @@ const Header: React.FC = () => {
 
             <button
               onClick={handleCartClick}
-              className="relative bg-green-600 hover:bg-green-700 text-white p-2 rounded-lg transition-colors"
+              className="relative bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg transition-colors"
             >
               <ShoppingCart className="h-5 w-5" />
               {cartItemsCount > 0 && (
@@ -107,7 +107,7 @@ const Header: React.FC = () => {
           <div className="lg:hidden flex items-center space-x-4">
             <button
               onClick={handleCartClick}
-              className="relative bg-green-600 hover:bg-green-700 text-white p-2 rounded-lg transition-colors"
+              className="relative bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg transition-colors"
             >
               <ShoppingCart className="h-5 w-5" />
               {cartItemsCount > 0 && (
@@ -139,8 +139,8 @@ const Header: React.FC = () => {
                   key={item.path}
                   onClick={() => handleNavigation(item.path)}
                   className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-colors ${isActivePath(item.path)
-                      ? 'bg-green-600 text-white'
-                      : 'text-slate-700 hover:bg-slate-100'
+                    ? 'bg-blue-600 text-white'
+                    : 'text-slate-700 hover:bg-slate-100'
                     }`}
                 >
                   {item.label}

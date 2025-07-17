@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="bg-green-600 p-2 rounded-lg">
+              <div className="bg-blue-600 p-2 rounded-lg">
                 <Shield className="h-6 w-6 text-white" />
               </div>
               <div>
@@ -57,18 +57,18 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-6">Kontak</h4>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-green-400" />
+                <MapPin className="h-5 w-5 text-blue-400" />
                 <p className="text-slate-400">
                   Kodim 007 Banjarmasin<br />
                   Kalimantan Selatan 70249
                 </p>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-green-400" />
+                <Phone className="h-5 w-5 text-blue-400" />
                 <p className="text-slate-400">+62 511 123 4567</p>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-green-400" />
+                <Mail className="h-5 w-5 text-blue-400" />
                 <p className="text-slate-400">koperasi@kodim007bjm.mil.id</p>
               </div>
             </div>

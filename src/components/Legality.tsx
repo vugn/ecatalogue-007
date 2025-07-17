@@ -54,7 +54,7 @@ const Legality: React.FC<LegalityProps> = ({ onDetailClick }) => {
             Legalitas Perusahaan
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Unit 007 Banjarmasin beroperasi dengan legalitas lengkap dan memenuhi 
+            Unit 007 Banjarmasin beroperasi dengan legalitas lengkap dan memenuhi
             semua persyaratan hukum yang berlaku di Indonesia.
           </p>
         </div>
@@ -65,7 +65,7 @@ const Legality: React.FC<LegalityProps> = ({ onDetailClick }) => {
               <FileText className="h-8 w-8 text-blue-600 mr-3" />
               Dokumen Perusahaan
             </h3>
-            
+
             <div className="space-y-6">
               {documents.map((doc, index) => {
                 const IconComponent = doc.icon;
@@ -84,8 +84,8 @@ const Legality: React.FC<LegalityProps> = ({ onDetailClick }) => {
                         <p className="text-sm text-slate-500">Tanggal: {doc.date}</p>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <CheckCircle className="h-5 w-5 text-green-600" />
-                        <span className="text-sm font-medium text-green-600">{doc.status}</span>
+                        <CheckCircle className="h-5 w-5 text-blue-600" />
+                        <span className="text-sm font-medium text-blue-600">{doc.status}</span>
                       </div>
                     </div>
                   </div>
@@ -96,23 +96,23 @@ const Legality: React.FC<LegalityProps> = ({ onDetailClick }) => {
 
           <div>
             <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
-              <Award className="h-8 w-8 text-green-600 mr-3" />
+              <Award className="h-8 w-8 text-blue-600 mr-3" />
               Izin Usaha & Sertifikat
             </h3>
-            
+
             <div className="bg-white rounded-xl p-8 shadow-lg border border-slate-100">
               <div className="space-y-4">
                 {licenses.map((license, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
                     <span className="text-slate-700 font-medium">{license}</span>
                   </div>
                 ))}
               </div>
-              
+
               <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <p className="text-sm text-blue-800">
-                  <strong>Catatan:</strong> Semua dokumen dan izin usaha kami diperbaharui secara berkala 
+                  <strong>Catatan:</strong> Semua dokumen dan izin usaha kami diperbaharui secara berkala
                   sesuai dengan peraturan yang berlaku dan dapat diverifikasi melalui instansi terkait.
                 </p>
                 <button

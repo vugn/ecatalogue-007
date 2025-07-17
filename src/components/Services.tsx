@@ -26,7 +26,7 @@ const Services: React.FC<ServicesProps> = ({ onServiceSelect }) => {
       title: 'Cleaning Service',
       description: 'Layanan kebersihan menyeluruh dengan standar internasional dan peralatan modern',
       icon: Users,
-      color: 'bg-green-600',
+      color: 'bg-blue-600',
       features: [
         'General Cleaning',
         'Deep Cleaning',
@@ -59,7 +59,7 @@ const Services: React.FC<ServicesProps> = ({ onServiceSelect }) => {
             Layanan Profesional Kami
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Solusi terpadu untuk kebutuhan bisnis Anda dengan standar kualitas tinggi 
+            Solusi terpadu untuk kebutuhan bisnis Anda dengan standar kualitas tinggi
             dan dukungan penuh dari tim profesional berpengalaman.
           </p>
         </div>
@@ -90,7 +90,7 @@ const Services: React.FC<ServicesProps> = ({ onServiceSelect }) => {
                   <div className="space-y-3 mb-8">
                     {service.features.map((feature, index) => (
                       <div key={index} className="flex items-center space-x-3">
-                        <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
                         <span className="text-slate-700">{feature}</span>
                       </div>
                     ))}

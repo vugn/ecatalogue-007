@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Shield, Package, ShoppingCart, Star, Search, Grid, List, CheckCircle, FileText, MessageCircle, Phone } from 'lucide-react';
+import { Shield, Package, ShoppingCart, Star, Search, Grid, List, CheckCircle, FileText, MessageCircle } from 'lucide-react';
 import { CartItem } from '../data/unifiedSchema';
 
 interface ProductCatalogProps {
@@ -167,7 +167,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
       case 'Terlaris': return 'bg-red-500';
       case 'Populer': return 'bg-blue-500';
       case 'Premium': return 'bg-purple-500';
-      case 'Hemat': return 'bg-green-500';
+      case 'Hemat': return 'bg-blue-500';
       case 'Eksklusif': return 'bg-indigo-600';
       case 'Kualitas Terjamin': return 'bg-slate-600';
       default: return 'bg-gray-500';
@@ -207,7 +207,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                   placeholder="Cari produk atau layanan..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
 
@@ -215,7 +215,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  className="px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <option value="name">Urutkan: Nama</option>
                   <option value="price-low">Harga: Rendah ke Tinggi</option>
@@ -226,13 +226,13 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                 <div className="flex border border-slate-300 rounded-lg overflow-hidden">
                   <button
                     onClick={() => setViewMode('grid')}
-                    className={`p-3 ${viewMode === 'grid' ? 'bg-green-600 text-white' : 'bg-white text-slate-600'}`}
+                    className={`p-3 ${viewMode === 'grid' ? 'bg-blue-600 text-white' : 'bg-white text-slate-600'}`}
                   >
                     <Grid className="h-5 w-5" />
                   </button>
                   <button
                     onClick={() => setViewMode('list')}
-                    className={`p-3 ${viewMode === 'list' ? 'bg-green-600 text-white' : 'bg-white text-slate-600'}`}
+                    className={`p-3 ${viewMode === 'list' ? 'bg-blue-600 text-white' : 'bg-white text-slate-600'}`}
                   >
                     <List className="h-5 w-5" />
                   </button>
@@ -249,7 +249,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                     key={category.id}
                     onClick={() => setSelectedCategory(category.id)}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-colors ${selectedCategory === category.id
-                      ? 'bg-green-600 text-white'
+                      ? 'bg-blue-600 text-white'
                       : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                       }`}
                   >
@@ -295,7 +295,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
 
               <div className={`p-6 ${viewMode === 'list' ? 'flex-1' : ''}`}>
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-bold text-slate-800 group-hover:text-green-600 transition-colors">
+                  <h3 className="text-xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
                     {product.name}
                   </h3>
                 </div>
@@ -307,7 +307,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                 <div className="space-y-2 mb-4">
                   {product.features.slice(0, 3).map((feature, index) => (
                     <div key={index} className="flex items-center space-x-2 text-sm">
-                      <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
+                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
                       <span className="text-slate-600">{feature}</span>
                     </div>
                   ))}
@@ -317,7 +317,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                 <div className="mb-4">
                   {product.showPrice ? (
                     <div className="flex items-center space-x-2">
-                      <span className="text-2xl font-bold text-green-600">
+                      <span className="text-2xl font-bold text-blue-600">
                         {formatPrice(product.price)}
                       </span>
                       {product.originalPrice > product.price && (
@@ -358,7 +358,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                   >
                     Lihat Detail
                   </button>
-                  
+
                   {product.showPrice ? (
                     <button
                       onClick={() => onAddToCart({
@@ -370,7 +370,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                         image: product.image,
                         category: product.category
                       })}
-                      className="bg-green-600 hover:bg-green-700 text-white p-3 rounded-lg transition-colors"
+                      className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-lg transition-colors"
                     >
                       <ShoppingCart className="h-5 w-5" />
                     </button>
@@ -393,7 +393,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
             <div className="text-center mt-12">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center space-x-2"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center space-x-2"
               >
                 <span>Lihat Semua Produk</span>
                 <ShoppingCart className="h-5 w-5" />
@@ -404,7 +404,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
             <div className="mt-16 bg-gradient-to-br from-slate-50 to-green-50 rounded-2xl p-8 lg:p-12">
               <div className="max-w-4xl mx-auto text-center">
                 <div className="flex justify-center mb-6">
-                  <div className="bg-green-600 p-4 rounded-full">
+                  <div className="bg-blue-600 p-4 rounded-full">
                     <Shield className="h-8 w-8 text-white" />
                   </div>
                 </div>
@@ -421,28 +421,28 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                   <div className="text-center">
                     <div className="bg-white rounded-lg p-4 shadow-sm mb-3">
-                      <Shield className="h-6 w-6 text-green-600 mx-auto" />
+                      <Shield className="h-6 w-6 text-blue-600 mx-auto" />
                     </div>
                     <div className="text-sm font-medium text-slate-700">Badan Hukum</div>
                     <div className="text-xs text-slate-500">Koperasi Resmi</div>
                   </div>
                   <div className="text-center">
                     <div className="bg-white rounded-lg p-4 shadow-sm mb-3">
-                      <CheckCircle className="h-6 w-6 text-green-600 mx-auto" />
+                      <CheckCircle className="h-6 w-6 text-blue-600 mx-auto" />
                     </div>
                     <div className="text-sm font-medium text-slate-700">SIUP</div>
                     <div className="text-xs text-slate-500">Izin Usaha</div>
                   </div>
                   <div className="text-center">
                     <div className="bg-white rounded-lg p-4 shadow-sm mb-3">
-                      <FileText className="h-6 w-6 text-green-600 mx-auto" />
+                      <FileText className="h-6 w-6 text-blue-600 mx-auto" />
                     </div>
                     <div className="text-sm font-medium text-slate-700">Kemitraan</div>
                     <div className="text-xs text-slate-500">Kodim 007</div>
                   </div>
                   <div className="text-center">
                     <div className="bg-white rounded-lg p-4 shadow-sm mb-3">
-                      <Package className="h-6 w-6 text-green-600 mx-auto" />
+                      <Package className="h-6 w-6 text-blue-600 mx-auto" />
                     </div>
                     <div className="text-sm font-medium text-slate-700">Kualitas</div>
                     <div className="text-xs text-slate-500">Terjamin</div>

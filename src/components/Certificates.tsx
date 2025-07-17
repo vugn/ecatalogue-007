@@ -166,7 +166,7 @@ const Certificates: React.FC<CertificatesProps> = ({ onBack }) => {
 
     const getStatusColor = (status: string) => {
         switch (status) {
-            case 'active': return 'bg-green-100 text-green-800';
+            case 'active': return 'bg-blue-100 text-blue-800';
             case 'expired': return 'bg-red-100 text-red-800';
             case 'pending': return 'bg-yellow-100 text-yellow-800';
             default: return 'bg-gray-100 text-gray-800';
@@ -230,8 +230,8 @@ const Certificates: React.FC<CertificatesProps> = ({ onBack }) => {
                                     key={category.id}
                                     onClick={() => setSelectedCategory(category.id)}
                                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-colors ${selectedCategory === category.id
-                                            ? 'bg-blue-600 text-white'
-                                            : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                                        ? 'bg-blue-600 text-white'
+                                        : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
                                         }`}
                                 >
                                     <IconComponent className="h-4 w-4" />
@@ -305,7 +305,7 @@ const Certificates: React.FC<CertificatesProps> = ({ onBack }) => {
                 {/* Legal Documents */}
                 <div>
                     <div className="flex items-center space-x-3 mb-6">
-                        <FileText className="h-6 w-6 text-green-600" />
+                        <FileText className="h-6 w-6 text-blue-600" />
                         <h2 className="text-xl font-bold text-slate-800">Dokumen Legalitas</h2>
                     </div>
 

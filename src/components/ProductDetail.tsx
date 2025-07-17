@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, ShoppingCart, Star, Check, Shield, Award, Clock, Users, MessageCircle, Phone, BookOpen } from 'lucide-react';
+import { ArrowLeft, ShoppingCart, Star, Check, Shield, Award, Clock, MessageCircle, Phone } from 'lucide-react';
 import { CartItem } from '../data/unifiedSchema';
 
 interface ProductDetailProps {
@@ -149,7 +149,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-2xl font-bold text-slate-800">Produk tidak ditemukan</h1>
-            <button onClick={onBack} className="mt-4 text-green-600 hover:text-green-700">
+            <button onClick={onBack} className="mt-4 text-blue-600 hover:text-blue-700">
               Kembali ke katalog
             </button>
           </div>
@@ -214,7 +214,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
           <div className="space-y-6">
             <div>
               <div className="flex items-center space-x-3 mb-2">
-                <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
                   {currentProduct.category}
                 </span>
                 <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -250,7 +250,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
               {currentProduct.showPrice ? (
                 <>
                   <div className="flex items-center space-x-4 mb-4">
-                    <span className="text-3xl font-bold text-green-600">
+                    <span className="text-3xl font-bold text-blue-600">
                       {formatPrice(currentProduct.price)}
                     </span>
                     {currentProduct.originalPrice > currentProduct.price && (
@@ -261,8 +261,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
                   </div>
 
                   {calculateSavings() > 0 && (
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-3 mb-4">
-                      <span className="text-green-800 font-medium">
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
+                      <span className="text-blue-800 font-medium">
                         Hemat {formatPrice(calculateSavings())}!
                       </span>
                     </div>
@@ -280,7 +280,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
                             key={duration}
                             onClick={() => setSelectedDuration(duration)}
                             className={`p-3 rounded-lg border-2 transition-colors ${selectedDuration === duration
-                              ? 'border-green-600 bg-green-50 text-green-800'
+                              ? 'border-blue-600 bg-blue-50 text-blue-800'
                               : 'border-slate-200 hover:border-slate-300'
                               }`}
                           >
@@ -295,7 +295,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
                   <div className="border-t border-slate-200 pt-4 mb-6">
                     <div className="flex justify-between items-center text-lg font-bold">
                       <span>Total:</span>
-                      <span className="text-green-600">{formatPrice(calculateTotal())}</span>
+                      <span className="text-blue-600">{formatPrice(calculateTotal())}</span>
                     </div>
                   </div>
 
@@ -311,7 +311,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
                         image: currentProduct.images[0],
                         category: currentProduct.category
                       })}
-                      className="w-full bg-green-600 hover:bg-green-700 text-white py-4 px-6 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 px-6 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2"
                     >
                       <ShoppingCart className="h-5 w-5" />
                       <span>Tambah ke Keranjang</span>
@@ -347,7 +347,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
                     </button>
 
                     <div className="grid grid-cols-2 gap-3">
-                      <button className="bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2">
                         <Phone className="h-4 w-4" />
                         <span>Telepon</span>
                       </button>
@@ -364,8 +364,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
             {/* Trust Indicators */}
             <div className="grid grid-cols-3 gap-4">
               <div className="text-center">
-                <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Shield className="h-6 w-6 text-green-600" />
+                <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Shield className="h-6 w-6 text-blue-600" />
                 </div>
                 <div className="text-sm font-medium text-slate-800">Terpercaya</div>
               </div>
@@ -394,7 +394,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`py-4 px-2 border-b-2 font-medium transition-colors capitalize whitespace-nowrap ${activeTab === tab
-                    ? 'border-green-600 text-green-600'
+                    ? 'border-blue-600 text-blue-600'
                     : 'border-transparent text-slate-600 hover:text-slate-800'
                     }`}
                 >
@@ -412,7 +412,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {currentProduct.features.map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-green-600 flex-shrink-0" />
+                      <Check className="h-5 w-5 text-blue-600 flex-shrink-0" />
                       <span className="text-slate-700">{feature}</span>
                     </div>
                   ))}

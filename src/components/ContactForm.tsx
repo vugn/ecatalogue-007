@@ -45,7 +45,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onBack }) => {
           <div>
             <h1 className="text-3xl font-bold text-slate-800 mb-6">Hubungi Kami</h1>
             <p className="text-lg text-slate-600 mb-8">
-              Siap membantu Anda dengan solusi terbaik untuk kebutuhan bisnis. 
+              Siap membantu Anda dengan solusi terbaik untuk kebutuhan bisnis.
               Tim profesional kami siap memberikan konsultasi gratis.
             </p>
 
@@ -61,8 +61,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ onBack }) => {
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="bg-green-100 p-3 rounded-lg">
-                  <Mail className="h-6 w-6 text-green-600" />
+                <div className="bg-blue-100 p-3 rounded-lg">
+                  <Mail className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-800">Email</h3>
@@ -100,7 +100,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onBack }) => {
 
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-2xl font-bold text-slate-800 mb-6">Kirim Pesan</h2>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">

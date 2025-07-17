@@ -114,21 +114,19 @@ const ServiceCatalog: React.FC<ServiceCatalogProps> = ({ selectedService, onBack
             <div className="flex space-x-8 px-8">
               <button
                 onClick={() => setActiveTab('overview')}
-                className={`py-4 px-2 border-b-2 font-medium transition-colors ${
-                  activeTab === 'overview' 
-                    ? 'border-blue-600 text-blue-600' 
+                className={`py-4 px-2 border-b-2 font-medium transition-colors ${activeTab === 'overview'
+                    ? 'border-blue-600 text-blue-600'
                     : 'border-transparent text-slate-600 hover:text-slate-800'
-                }`}
+                  }`}
               >
                 Paket Layanan
               </button>
               <button
                 onClick={() => setActiveTab('deal')}
-                className={`py-4 px-2 border-b-2 font-medium transition-colors ${
-                  activeTab === 'deal' 
-                    ? 'border-blue-600 text-blue-600' 
+                className={`py-4 px-2 border-b-2 font-medium transition-colors ${activeTab === 'deal'
+                    ? 'border-blue-600 text-blue-600'
                     : 'border-transparent text-slate-600 hover:text-slate-800'
-                }`}
+                  }`}
               >
                 Proses Deal
               </button>
@@ -145,7 +143,7 @@ const ServiceCatalog: React.FC<ServiceCatalogProps> = ({ selectedService, onBack
                     <ul className="space-y-3 mb-8">
                       {pkg.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center space-x-2">
-                          <Check className="h-5 w-5 text-green-600" />
+                          <Check className="h-5 w-5 text-blue-600" />
                           <span className="text-slate-700">{feature}</span>
                         </li>
                       ))}
@@ -168,9 +166,8 @@ const ServiceCatalog: React.FC<ServiceCatalogProps> = ({ selectedService, onBack
                   <div className="flex items-center space-x-4 mb-8">
                     {dealSteps.map((step) => (
                       <div key={step.step} className="flex items-center space-x-2">
-                        <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                          dealStep >= step.step ? 'bg-blue-600 text-white' : 'bg-slate-200 text-slate-600'
-                        }`}>
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center ${dealStep >= step.step ? 'bg-blue-600 text-white' : 'bg-slate-200 text-slate-600'
+                          }`}>
                           {dealStep > step.step ? <Check className="h-5 w-5" /> : step.step}
                         </div>
                         <div className="text-sm">
@@ -198,16 +195,16 @@ const ServiceCatalog: React.FC<ServiceCatalogProps> = ({ selectedService, onBack
                       </button>
                     </div>
 
-                    <div className="bg-green-50 p-6 rounded-xl border border-green-200">
+                    <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                       <div className="flex items-center space-x-3 mb-4">
-                        <FileText className="h-6 w-6 text-green-600" />
-                        <h4 className="font-semibold text-green-800">Tanda Tangan Digital</h4>
+                        <FileText className="h-6 w-6 text-blue-600" />
+                        <h4 className="font-semibold text-blue-800">Tanda Tangan Digital</h4>
                       </div>
-                      <p className="text-green-700 mb-4">
+                      <p className="text-blue-700 mb-4">
                         Proses kontrak cepat dengan sistem tanda tangan digital
                       </p>
-                      <button 
-                        className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                      <button
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
                         onClick={handleDealProgress}
                       >
                         Lanjutkan Proses
@@ -234,12 +231,10 @@ const ServiceCatalog: React.FC<ServiceCatalogProps> = ({ selectedService, onBack
                       <div className="space-y-2">
                         {dealSteps.map((step) => (
                           <div key={step.step} className="flex items-center space-x-3">
-                            <div className={`w-4 h-4 rounded-full ${
-                              dealStep >= step.step ? 'bg-blue-600' : 'bg-slate-300'
-                            }`}></div>
-                            <span className={`text-sm ${
-                              dealStep >= step.step ? 'text-slate-800 font-medium' : 'text-slate-500'
-                            }`}>
+                            <div className={`w-4 h-4 rounded-full ${dealStep >= step.step ? 'bg-blue-600' : 'bg-slate-300'
+                              }`}></div>
+                            <span className={`text-sm ${dealStep >= step.step ? 'text-slate-800 font-medium' : 'text-slate-500'
+                              }`}>
                               {step.title}
                             </span>
                           </div>
