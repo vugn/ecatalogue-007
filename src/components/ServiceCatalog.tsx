@@ -139,7 +139,27 @@ const ServiceCatalog: React.FC<ServiceCatalogProps> = ({ selectedService, onBack
                 {currentService.packages.map((pkg, index) => (
                   <div key={index} className="border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
                     <h3 className="text-xl font-bold text-slate-800 mb-2">{pkg.name}</h3>
-                    <p className="text-2xl font-bold text-blue-600 mb-6">{pkg.price}</p>
+                    <div className="mb-6">
+                        {selectedService === 'security' || selectedService === 'outsourcing' ? (
+                          <div className="text-center py-2">
+                            <span className="text-lg font-bold text-slate-600 bg-slate-100 px-3 py-1 rounded-lg">
+                              Harga Sesuai Permintaan / Kontak Admin
+                            </span>
+                          </div>
+                        ) : (
+                          <div>
+                            <p className="text-2xl font-bold text-blue-600">{pkg.price}</p>
+                            <div className="mt-2 bg-slate-50 p-2 rounded-lg border border-slate-200">
+                              <p className="text-xs text-slate-600 mb-1 font-medium">Metode Pembayaran:</p>
+                              <div className="flex flex-wrap gap-1">
+                                <span className="bg-white text-xs px-1 py-0.5 rounded border border-slate-200">E-Wallet</span>
+                                <span className="bg-white text-xs px-1 py-0.5 rounded border border-slate-200">Transfer</span>
+                                <span className="bg-white text-xs px-1 py-0.5 rounded border border-slate-200">QRIS</span>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     <ul className="space-y-3 mb-8">
                       {pkg.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center space-x-2">
@@ -149,11 +169,11 @@ const ServiceCatalog: React.FC<ServiceCatalogProps> = ({ selectedService, onBack
                       ))}
                     </ul>
                     <button
-                      onClick={() => setActiveTab('deal')}
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors"
-                    >
-                      Pilih Paket
-                    </button>
+                        onClick={() => setActiveTab('deal')}
+                        className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors"
+                      >
+                        {selectedService === 'security' || selectedService === 'outsourcing' ? 'Hubungi Admin' : 'Pilih Paket'}
+                      </button>
                   </div>
                 ))}
               </div>

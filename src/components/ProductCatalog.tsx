@@ -92,6 +92,21 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
       showPrice: false
     },
     {
+      id: 'jasa-pengawalan',
+      name: 'Jasa Pengawalan VIP & Aset Berharga',
+      category: 'Jasa Khusus',
+      price: 0,
+      originalPrice: 0,
+      rating: 5.0,
+      reviews: 8,
+      image: 'https://images.pexels.com/photos/6175167/pexels-photo-6175167.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Layanan pengawalan profesional untuk keamanan personal dan aset berharga.',
+      features: ['Personel terlatih', 'Pengawalan 24/7', 'Kendaraan khusus', 'Koordinasi keamanan'],
+      badge: 'Premium',
+      inStock: true,
+      showPrice: false
+    },
+    {
       id: 'jasa-pelatihan',
       name: 'Pelatihan Bela Diri & Disiplin Militer',
       category: 'Jasa Khusus',
@@ -107,6 +122,21 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
       showPrice: false
     },
     {
+      id: 'tactical-survival',
+      name: 'Perlengkapan Tactical & Survival',
+      category: 'Lainnya',
+      price: 375000,
+      originalPrice: 425000,
+      rating: 4.8,
+      reviews: 18,
+      image: 'https://images.pexels.com/photos/6044198/pexels-photo-6044198.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Perlengkapan tactical dan survival untuk kegiatan outdoor ekstrim dan situasi darurat.',
+      features: ['Tahan lama', 'Multi-fungsi', 'Desain ergonomis', 'Material premium'],
+      badge: 'Terlaris',
+      inStock: true,
+      showPrice: true
+    },
+    {
       id: 'lainnya-001',
       name: 'Seragam & Atribut Militer',
       category: 'Lainnya',
@@ -120,12 +150,27 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
       badge: 'Kualitas Terjamin',
       inStock: true,
       showPrice: true
+    },
+    {
+      id: 'lainnya-002',
+      name: 'Perlengkapan Outdoor & Camping',
+      category: 'Lainnya',
+      price: 350000,
+      originalPrice: 400000,
+      rating: 4.6,
+      reviews: 12,
+      image: 'https://images.pexels.com/photos/6271625/pexels-photo-6271625.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description: 'Perlengkapan outdoor dan camping untuk aktivitas luar ruangan.',
+      features: ['Tahan air', 'Ringan & portable', 'Mudah dipasang', 'Kapasitas besar'],
+      badge: 'Baru',
+      inStock: true,
+      showPrice: true
     }
   ];
 
   const categories = [
     { id: 'all', name: 'Semua Produk', icon: Grid },
-    { id: 'ATK', name: 'ATK', icon: FileText },
+    { id: 'ATK', name: 'ATK (Alat Tulis Kantor)', icon: FileText },
     { id: 'Sembako', name: 'Sembako', icon: Package },
     { id: 'Jasa Khusus', name: 'Jasa Khusus', icon: Shield },
     { id: 'Lainnya', name: 'Lainnya', icon: CheckCircle }
@@ -329,7 +374,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onProductSelect, onAddT
                   ) : (
                     <div className="text-center py-2">
                       <span className="text-lg font-bold text-slate-600 bg-slate-100 px-4 py-2 rounded-lg">
-                        Harga Sesuai Permintaan
+                        Harga Sesuai Permintaan / Kontak Admin
                       </span>
                     </div>
                   )}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, ShoppingBag, Award, Phone, CheckCircle, Package } from 'lucide-react';
+import { Shield, ShoppingBag, Award, CheckCircle, Package } from 'lucide-react';
 
 interface HeroProps {
   onCatalogClick: () => void;
@@ -24,7 +24,7 @@ const Hero: React.FC<HeroProps> = ({ onCatalogClick, onCertificatesClick }) => {
 
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
               Melayani kebutuhan ATK, sembako, dan jasa khusus dengan harga terjangkau.
-              Terpercaya untuk masyarakat umum dan anggota PRIMER KOPERASI KARTIKA BANJARMASIN.
+              Terpercaya untuk masyarakat umum dan anggota Kodim.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -68,17 +68,41 @@ const Hero: React.FC<HeroProps> = ({ onCatalogClick, onCertificatesClick }) => {
                   <Package className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold">ATK & Sembako</h3>
-                  <p className="text-blue-200">Harga terjangkau, kualitas terjamin</p>
+                  <h3 className="text-xl font-semibold">Penjualan Barang Kategori</h3>
+                  <p className="text-blue-200">Berbagai produk dengan pengelompokan kategori</p>
                 </div>
               </div>
               <div className="flex items-center space-x-2 mb-3">
                 <CheckCircle className="h-4 w-4 text-blue-400" />
-                <span className="text-blue-100 text-sm">Alat tulis kantor lengkap</span>
+                <span className="text-blue-100 text-sm">ATK (Alat Tulis Kantor)</span>
+              </div>
+              <div className="flex items-center space-x-2 mb-3">
+                <CheckCircle className="h-4 w-4 text-blue-400" />
+                <span className="text-blue-100 text-sm">Sembako</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4 text-blue-400" />
-                <span className="text-blue-100 text-sm">Sembako berkualitas</span>
+                <span className="text-blue-100 text-sm">Lainnya</span>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <div className="flex items-center space-x-4 mb-4">
+                <div className="bg-green-600 p-3 rounded-lg">
+                  <ShoppingBag className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold">Harga Terjangkau & Pembayaran Mudah</h3>
+                  <p className="text-blue-200">Barang-barang umum dengan harga murah</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-2 mb-3">
+                <CheckCircle className="h-4 w-4 text-blue-400" />
+                <span className="text-blue-100 text-sm">Harga murah dan terjangkau</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-4 w-4 text-blue-400" />
+                <span className="text-blue-100 text-sm">Pembayaran via e-wallet, transfer bank, QRIS</span>
               </div>
             </div>
 
@@ -88,37 +112,17 @@ const Hero: React.FC<HeroProps> = ({ onCatalogClick, onCertificatesClick }) => {
                   <Shield className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold">Jasa Khusus Premium</h3>
-                  <p className="text-blue-200">Layanan profesional ex-TNI</p>
+                  <h3 className="text-xl font-semibold">Jasa Khusus (Harga Tersamar)</h3>
+                  <p className="text-blue-200">Layanan premium dan sensitif</p>
                 </div>
               </div>
               <div className="flex items-center space-x-2 mb-3">
                 <CheckCircle className="h-4 w-4 text-blue-400" />
-                <span className="text-blue-100 text-sm">Jasa pengamanan profesional</span>
+                <span className="text-blue-100 text-sm">Layanan keamanan, pengawalan, pelatihan militer</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4 text-blue-400" />
-                <span className="text-blue-100 text-sm">Pelatihan bela diri & disiplin</span>
-              </div>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="bg-purple-600 p-3 rounded-lg">
-                  <Phone className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold">Pembayaran Mudah</h3>
-                  <p className="text-blue-200">Multiple payment gateway</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-2 mb-3">
-                <CheckCircle className="h-4 w-4 text-blue-400" />
-                <span className="text-blue-100 text-sm">Transfer bank, e-wallet, QRIS</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="h-4 w-4 text-blue-400" />
-                <span className="text-blue-100 text-sm">Pembayaran tunai tersedia</span>
+                <span className="text-blue-100 text-sm">Hubungi admin untuk harga dan pemesanan</span>
               </div>
             </div>
           </div>

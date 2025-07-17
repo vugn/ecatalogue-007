@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, ShoppingCart, Star, Check, Shield, Award, Clock, MessageCircle, Phone } from 'lucide-react';
+import { ArrowLeft, ShoppingCart, Star, Check, Shield, Award, Clock, MessageCircle, Phone, DollarSign } from 'lucide-react';
 import { CartItem } from '../data/unifiedSchema';
 
 interface ProductDetailProps {
@@ -291,6 +291,17 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
                     </div>
                   )}
 
+                  {/* Payment Methods */}
+                  <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 mb-4">
+                    <p className="text-sm text-slate-600 mb-2 font-medium">Metode Pembayaran:</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">E-Wallet</span>
+                      <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">Transfer Bank</span>
+                      <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">QRIS</span>
+                      <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">Tunai</span>
+                    </div>
+                  </div>
+
                   {/* Total Calculation */}
                   <div className="border-t border-slate-200 pt-4 mb-6">
                     <div className="flex justify-between items-center text-lg font-bold">
@@ -333,10 +344,10 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
                 <>
                   <div className="text-center py-6">
                     <div className="text-2xl font-bold text-slate-600 mb-4">
-                      Harga Sesuai Permintaan
+                      Harga Sesuai Permintaan / Kontak Admin
                     </div>
                     <p className="text-slate-600 mb-6">
-                      Layanan premium dengan harga yang disesuaikan dengan kebutuhan spesifik Anda.
+                      Layanan premium dan sensitif dengan harga yang disesuaikan dengan kebutuhan spesifik Anda.
                     </p>
                   </div>
 
@@ -362,7 +373,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
             </div>
 
             {/* Trust Indicators */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-4 gap-4">
               <div className="text-center">
                 <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
                   <Shield className="h-6 w-6 text-blue-600" />
@@ -380,6 +391,25 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ productId, onBack, onAddT
                   <Clock className="h-6 w-6 text-purple-600" />
                 </div>
                 <div className="text-sm font-medium text-slate-800">Pelayanan Cepat</div>
+              </div>
+              {currentProduct.showPrice && (
+                <div className="text-center">
+                  <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <DollarSign className="h-6 w-6 text-green-600" />
+                  </div>
+                  <div className="text-sm font-medium text-slate-800">Harga Terjangkau</div>
+                </div>
+              )}
+            </div>
+            
+            {/* Payment Methods */}
+            <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 mt-4">
+              <p className="text-sm text-slate-600 mb-2 font-medium">Metode Pembayaran:</p>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">E-Wallet</span>
+                <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">Transfer Bank</span>
+                <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">QRIS</span>
+                <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">Tunai</span>
               </div>
             </div>
           </div>

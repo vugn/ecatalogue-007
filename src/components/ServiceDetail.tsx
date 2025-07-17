@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Shield, Users, Briefcase, Check, Star, Clock, Award, Phone, MessageCircle } from 'lucide-react';
+import { ArrowLeft, Shield, Users, Briefcase, Check, Star, Clock, Award, Phone, MessageCircle, DollarSign } from 'lucide-react';
 
 interface ServiceDetailProps {
   selectedService: string;
@@ -318,7 +318,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ selectedService, onBack }
 
                 <div className="bg-slate-50 rounded-xl p-6">
                   <h3 className="text-xl font-semibold text-slate-800 mb-4">Mengapa Memilih Layanan Kami?</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div className="text-center">
                       <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
                         <Award className="h-8 w-8 text-blue-600" />
@@ -340,6 +340,15 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ selectedService, onBack }
                       <h4 className="font-semibold text-slate-800 mb-2">Kualitas Terjamin</h4>
                       <p className="text-sm text-slate-600">Standar kualitas internasional</p>
                     </div>
+                    {selectedService !== 'security' && selectedService !== 'outsourcing' && (
+                      <div className="text-center">
+                        <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                          <DollarSign className="h-8 w-8 text-green-600" />
+                        </div>
+                        <h4 className="font-semibold text-slate-800 mb-2">Harga Terjangkau</h4>
+                        <p className="text-sm text-slate-600">Pembayaran mudah dan fleksibel</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -362,8 +371,26 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ selectedService, onBack }
 
                       <h3 className="text-xl font-bold text-slate-800 mb-2">{pkg.name}</h3>
                       <div className="mb-6">
-                        <span className="text-3xl font-bold text-blue-600">{pkg.price}</span>
-                        <span className="text-slate-600">{pkg.period}</span>
+                        {selectedService === 'security' || selectedService === 'outsourcing' ? (
+                          <div className="text-center py-2">
+                            <span className="text-xl font-bold text-slate-600 bg-slate-100 px-4 py-2 rounded-lg">
+                              Harga Sesuai Permintaan / Kontak Admin
+                            </span>
+                          </div>
+                        ) : (
+                          <>
+                            <span className="text-3xl font-bold text-blue-600">{pkg.price}</span>
+                            <span className="text-slate-600">{pkg.period}</span>
+                            <div className="mt-2 bg-slate-50 p-2 rounded-lg border border-slate-200">
+                              <p className="text-xs text-slate-600 mb-1 font-medium">Metode Pembayaran:</p>
+                              <div className="flex flex-wrap gap-1">
+                                <span className="bg-white text-xs px-1 py-0.5 rounded border border-slate-200">E-Wallet</span>
+                                <span className="bg-white text-xs px-1 py-0.5 rounded border border-slate-200">Transfer</span>
+                                <span className="bg-white text-xs px-1 py-0.5 rounded border border-slate-200">QRIS</span>
+                              </div>
+                            </div>
+                          </>
+                        )}
                       </div>
 
                       <ul className="space-y-3 mb-8">
@@ -379,7 +406,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ selectedService, onBack }
                           ? 'bg-blue-600 hover:bg-blue-700 text-white'
                           : 'bg-slate-100 hover:bg-slate-200 text-slate-800'
                         }`}>
-                        Pilih Paket
+                        {selectedService === 'security' || selectedService === 'outsourcing' ? 'Hubungi Admin' : 'Pilih Paket'}
                       </button>
                     </div>
                   ))}
