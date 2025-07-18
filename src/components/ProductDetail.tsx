@@ -7,9 +7,10 @@ import {
   Shield,
   Award,
   Clock,
-  Users,
   MessageCircle,
   Phone,
+  DollarSign,
+  Users,
   BookOpen,
 } from "lucide-react";
 import { CartItem } from "../data/unifiedSchema";
@@ -151,126 +152,144 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
     };
   };
 
-  // Function to format price
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      minimumFractionDigits: 0,
-    }).format(price);
-  };
-
   // Function to format number without currency
   const formatNumber = (number: number) => {
     return new Intl.NumberFormat("id-ID").format(number);
   };
 
   const productData = {
-    "cleaning-corporate": {
-      name: "Jasa Cleaning Service Korporat",
-      category: "Cleaning Service",
-      price: 1500000000,
-      originalPrice: 1500000000,
-      rating: 4.9,
-      reviews: 34,
-      images: [
-        "https://images.pexels.com/photos/4239119/pexels-photo-4239119.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/4239013/pexels-photo-4239013.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=800",
-      ],
-      description:
-        "Solusi cleaning service komprehensif dengan kontrak tahunan tetap untuk fasilitas besar dan kompleks. Meliputi penyediaan tim cleaning profesional dengan peralatan modern untuk menjaga standar kebersihan tinggi.",
-      features: [
-        "Kontrak Tahunan Tetap (Fixed Yearly Contract)",
-        "Tim Cleaning Berlapis: Cleaning Staff, Supervisor, Koordinator Area",
-        "Cakupan Layanan Lengkap: Daily cleaning, Deep cleaning, Sanitasi",
-        "Fasilitas Kompleks: Perkantoran, Rumah Sakit, Mall, Pabrik",
-        "Peralatan Modern dan Teknologi Terdepan",
-        "Manajemen Waste dan Daur Ulang",
-        "Quality Control dan Monitoring",
-        "Laporan Digital Real-time",
-        "Asuransi dan BPJS Ketenagakerjaan Lengkap",
-        "Eco-friendly Products dan Green Cleaning",
-      ],
-      specifications: {
-        "Model Kontrak": "Kontrak Tahunan Tetap (Fixed Yearly)",
-        "Durasi Layanan": "Disesuaikan kebutuhan (Harian, Mingguan, Bulanan)",
-        "Struktur Tim": "Cleaning Staff, Supervisor Area, Koordinator Lapangan",
-        Sertifikasi: "Cleaning Professional License, K3, Hygiene Standards",
-        Peralatan: "Industrial Grade Equipment, Eco-friendly Products",
-        Laporan: "Real-time digital dashboard dan laporan berkala",
-        "Response Time": "Emergency cleaning dalam 1 jam",
-        "Cakupan Area": "Unlimited sesuai kontrak",
-      },
-      testimonials: [
-        {
-          name: "RSUD Ulin Banjarmasin",
-          rating: 5,
-          comment:
-            "Standar kebersihan medis selalu terjaga. Tim sangat professional dan responsif terhadap kebutuhan khusus rumah sakit.",
-        },
-        {
-          name: "Mall Duta Plaza Banjarmasin",
-          rating: 5,
-          comment:
-            "Kebersihan mall terjaga dengan baik setiap hari. Pengunjung merasa nyaman dengan lingkungan yang bersih.",
-        },
-      ],
-      inStock: true,
-      badge: "Korporat",
-    },
-    "sales-corporate": {
-      name: "Jasa Outsourcing Sales Korporat",
-      category: "Outsourcing Sales",
-      price: 2000000000,
-      originalPrice: 2000000000,
+    "atk-001": {
+      name: "Paket ATK Lengkap Kantor",
+      category: "ATK",
+      price: 150000,
+      originalPrice: 180000,
       rating: 4.8,
-      reviews: 29,
+      reviews: 45,
       images: [
-        "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&w=800",
       ],
       description:
-        "Solusi outsourcing sales komprehensif dengan kontrak tahunan tetap untuk ekspansi bisnis korporat. Meliputi penyediaan tim sales profesional dengan strategi terukur untuk mencapai target revenue yang optimal.",
+        "Paket lengkap alat tulis kantor berkualitas untuk kebutuhan administrasi sehari-hari. Cocok untuk kantor, sekolah, dan keperluan pribadi dengan harga yang sangat terjangkau.",
       features: [
-        "Kontrak Tahunan Tetap (Fixed Yearly Contract)",
-        "Tim Sales Berlapis: Sales Executive, Sales Manager, Regional Director",
-        "Strategi Penjualan Terukur dan Target Revenue Jelas",
-        "Digital Marketing dan Online Presence Management",
-        "Lead Generation dan Customer Acquisition",
-        "CRM Implementation dan Database Management",
-        "Market Research dan Competitor Analysis",
-        "Performance Analytics dan ROI Tracking",
-        "Asuransi dan BPJS Ketenagakerjaan Lengkap",
-        "Training dan Development Program Berkelanjutan",
+        "Pulpen gel 12 pcs (biru, hitam, merah)",
+        "Pensil 2B 6 pcs berkualitas tinggi",
+        "Penghapus putih 4 pcs",
+        "Penggaris 30cm 2 pcs",
+        "Spidol permanent 6 pcs",
+        "Kertas HVS A4 1 rim (500 lembar)",
+        "Map plastik 10 pcs",
+        "Stapler + isi staples",
+        "Paper clip 1 box",
+        "Correction pen 2 pcs",
       ],
       specifications: {
-        "Model Kontrak": "Kontrak Tahunan Tetap (Fixed Yearly)",
-        "Target Revenue": "Disesuaikan dengan target perusahaan",
-        "Struktur Tim": "Sales Executive, Sales Manager, Regional Director",
-        Sertifikasi: "Professional Sales License, Digital Marketing Certified",
-        "Tools & Platform": "CRM System, Marketing Automation, Analytics Tools",
-        Laporan: "Real-time sales dashboard dan laporan performa",
-        "Response Time": "Lead follow-up dalam 2 jam",
-        "Market Coverage": "Regional dan nasional sesuai kontrak",
+        "Isi Paket": "10 jenis ATK lengkap",
+        Kualitas: "Grade A, tahan lama",
+        Kemasan: "Box eksklusif PRIMER KOPERASI KARTIKA BANJARMASIN",
+        Garansi: "30 hari tukar barang rusak",
+        Pengiriman: "Gratis ongkir area Banjarmasin",
       },
       testimonials: [
         {
-          name: "PT Banjarmasin Port",
+          name: "Ibu Sari - Guru SD",
           rating: 5,
           comment:
-            "Tim sales sangat profesional dan berhasil meningkatkan revenue kami 150% dalam setahun. Strategi yang diterapkan sangat efektif.",
+            "ATK lengkap dan berkualitas, harga sangat terjangkau. Anak-anak suka dengan kualitas pulpennya.",
         },
         {
-          name: "CV Borneo Logistics",
+          name: "Pak Budi - Staff Kantor",
           rating: 5,
           comment:
-            "Ekspansi market berhasil dilakukan dengan baik. Tim sales membantu kami masuk ke segmen B2B yang sebelumnya sulit dijangkau.",
+            "Paket ATK yang sangat lengkap, cocok untuk kebutuhan kantor sehari-hari. Harga murah meriah!",
         },
       ],
       inStock: true,
-      badge: "Korporat",
+      badge: "Terlaris",
+      showPrice: true,
+    },
+    "jasa-keamanan": {
+      name: "Jasa Pengamanan & Keamanan Profesional",
+      category: "Jasa Khusus",
+      price: 0,
+      originalPrice: 0,
+      rating: 5.0,
+      reviews: 12,
+      images: [
+        "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/8728380/pexels-photo-8728380.jpeg?auto=compress&cs=tinysrgb&w=800",
+      ],
+      description:
+        "Layanan pengamanan profesional dengan personel berpengalaman militer. Meliputi pengamanan acara, pengawalan, dan keamanan fasilitas dengan standar tinggi sesuai kebutuhan klien.",
+      features: [
+        "Personel berpengalaman militer (ex-TNI/Polri)",
+        "Pengamanan acara VIP dan korporat",
+        "Pengawalan personal dan korporat",
+        "Keamanan fasilitas 24/7",
+        "Pelatihan keamanan khusus",
+        "Konsultasi keamanan gratis",
+        "Sistem komunikasi terintegrasi",
+        "Respons cepat situasi darurat",
+      ],
+      specifications: {
+        Personel: "Ex-TNI/Polri berpengalaman",
+        Sertifikasi: "Gada Pratama & Madya",
+        Peralatan: "Standar militer",
+        Cakupan: "Lokal & regional",
+        Konsultasi: "Gratis survey lokasi",
+        Harga: "Sesuai permintaan dan kebutuhan",
+      },
+      testimonials: [
+        {
+          name: "PT. Banjarmasin Sejahtera",
+          rating: 5,
+          comment:
+            "Layanan keamanan sangat profesional. Tim berpengalaman dan dapat diandalkan untuk menjaga keamanan perusahaan.",
+        },
+      ],
+      inStock: true,
+      badge: "Premium",
+      showPrice: false,
+    },
+    "sembako-001": {
+      name: "Beras Premium 5kg",
+      category: "Sembako",
+      price: 65000,
+      originalPrice: 75000,
+      rating: 4.7,
+      reviews: 156,
+      images: [
+        "https://images.pexels.com/photos/33239/wheat-field-wheat-yellow-grain.jpg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/4110256/pexels-photo-4110256.jpeg?auto=compress&cs=tinysrgb&w=800",
+      ],
+      description:
+        "Beras premium kualitas terbaik, pulen, wangi, dan bergizi tinggi. Langsung dari petani lokal Kalimantan Selatan dengan proses sortir yang ketat.",
+      features: [
+        "Beras premium grade A",
+        "Pulen dan wangi alami",
+        "Bebas kutu dan kotoran",
+        "Kemasan higienis 5kg",
+        "Langsung dari petani lokal Kalsel",
+        "Sudah disortir berkualitas",
+      ],
+      specifications: {
+        Berat: "5 kg",
+        Jenis: "Beras putih premium",
+        Asal: "Petani lokal Kalsel",
+        Kemasan: "Karung plastik food grade",
+        Expired: "6 bulan dari tanggal produksi",
+      },
+      testimonials: [
+        {
+          name: "Ibu Ratna - Ibu Rumah Tangga",
+          rating: 5,
+          comment:
+            "Beras pulen dan enak, keluarga suka. Harga lebih murah dari supermarket tapi kualitas sama bagusnya.",
+        },
+      ],
+      inStock: true,
+      badge: "Populer",
+      showPrice: true,
     },
     "security-corporate": {
       name: "Jasa Keamanan Korporat BUMN",
@@ -326,6 +345,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       ],
       inStock: true,
       badge: "BUMN",
+      showPrice: true,
     },
   };
 
@@ -350,6 +370,15 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       </div>
     );
   }
+
+  // Function to format price
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR",
+      minimumFractionDigits: 0,
+    }).format(price);
+  };
 
   const calculateTotal = () => {
     return currentProduct.price * selectedDuration;
@@ -440,181 +469,163 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
 
             {/* Pricing */}
             <div className="bg-white rounded-xl p-6 shadow-lg border border-slate-100">
-              <div className="flex items-center space-x-4 mb-4">
-                <span className="text-3xl font-bold text-blue-600">
-                  {formatPrice(currentProduct.price)}
-                </span>
-                {currentProduct.originalPrice > currentProduct.price && (
-                  <span className="text-xl text-slate-400 line-through">
-                    {formatPrice(currentProduct.originalPrice)}
-                  </span>
-                )}
-                <span className="text-slate-600">
-                  {productId === "security-corporate" ||
-                  productId === "cleaning-corporate" ||
-                  productId === "sales-corporate"
-                    ? "/tahun"
-                    : "/bulan"}
-                </span>
-              </div>
-
-              {(productId === "security-corporate" ||
-                productId === "cleaning-corporate" ||
-                productId === "sales-corporate") && (
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <Shield className="h-5 w-5 text-blue-600" />
-                    <span className="font-semibold text-blue-800">
-                      Kontrak Tahunan Tetap
+              {currentProduct.showPrice ? (
+                <>
+                  <div className="flex items-center space-x-4 mb-4">
+                    <span className="text-3xl font-bold text-blue-600">
+                      {formatPrice(currentProduct.price)}
                     </span>
-                  </div>
-                  <p className="text-blue-700 text-sm">
-                    Model kontrak khusus untuk BUMN dan korporat besar dengan
-                    harga tetap selama 1 tahun penuh.
-                  </p>
-                </div>
-              )}
-
-              {calculateSavings() > 0 &&
-                !(
-                  productId === "security-corporate" ||
-                  productId === "cleaning-corporate" ||
-                  productId === "sales-corporate"
-                ) && (
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-3 mb-4">
-                    <span className="text-green-800 font-medium">
-                      Hemat {formatPrice(calculateSavings())} untuk{" "}
-                      {selectedDuration} bulan!
-                    </span>
-                  </div>
-                )}
-
-              {/* Duration Selector - Only for non-corporate packages */}
-              {!(
-                productId === "security-corporate" ||
-                productId === "cleaning-corporate" ||
-                productId === "sales-corporate"
-              ) && (
-                <div className="mb-6">
-                  <label className="block text-sm font-medium text-slate-700 mb-3">
-                    Pilih Durasi Kontrak:
-                  </label>
-                  <div className="grid grid-cols-3 gap-3">
-                    {[1, 3, 6, 12].map((duration) => (
-                      <button
-                        key={duration}
-                        onClick={() => setSelectedDuration(duration)}
-                        className={`p-3 rounded-lg border-2 transition-colors ${
-                          selectedDuration === duration
-                            ? "border-blue-600 bg-blue-50 text-blue-800"
-                            : "border-slate-200 hover:border-slate-300"
-                        }`}
-                      >
-                        <div className="font-semibold">{duration} Bulan</div>
-                        {duration > 1 && (
-                          <div className="text-xs text-green-600">
-                            Diskon 5%
-                          </div>
-                        )}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Total Calculation */}
-              <div className="border-t border-slate-200 pt-4 mb-6">
-                {!(
-                  productId === "security-corporate" ||
-                  productId === "cleaning-corporate" ||
-                  productId === "sales-corporate"
-                ) ? (
-                  <>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-slate-600">
-                        Subtotal ({selectedDuration} bulan):
+                    {currentProduct.originalPrice > currentProduct.price && (
+                      <span className="text-xl text-slate-400 line-through">
+                        {formatPrice(currentProduct.originalPrice)}
                       </span>
-                      <span className="font-semibold">
-                        {formatPrice(calculateTotal())}
+                    )}
+                  </div>
+
+                  {calculateSavings() > 0 && (
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
+                      <span className="text-blue-800 font-medium">
+                        Hemat {formatPrice(calculateSavings())}!
                       </span>
                     </div>
+                  )}
+
+                  {/* Duration Selector for non-service products */}
+                  {currentProduct.category !== "Jasa Khusus" && (
+                    <div className="mb-6">
+                      <label className="block text-sm font-medium text-slate-700 mb-3">
+                        Jumlah:
+                      </label>
+                      <div className="grid grid-cols-4 gap-3">
+                        {[1, 2, 3, 5].map((duration) => (
+                          <button
+                            key={duration}
+                            onClick={() => setSelectedDuration(duration)}
+                            className={`p-3 rounded-lg border-2 transition-colors ${
+                              selectedDuration === duration
+                                ? "border-blue-600 bg-blue-50 text-blue-800"
+                                : "border-slate-200 hover:border-slate-300"
+                            }`}
+                          >
+                            <div className="font-semibold">{duration}</div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Payment Methods */}
+                  <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 mb-4">
+                    <p className="text-sm text-slate-600 mb-2 font-medium">
+                      Metode Pembayaran:
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">
+                        E-Wallet
+                      </span>
+                      <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">
+                        Transfer Bank
+                      </span>
+                      <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">
+                        QRIS
+                      </span>
+                      <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">
+                        Tunai
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Total Calculation */}
+                  <div className="border-t border-slate-200 pt-4 mb-6">
                     <div className="flex justify-between items-center text-lg font-bold">
                       <span>Total:</span>
                       <span className="text-blue-600">
                         {formatPrice(calculateTotal())}
                       </span>
                     </div>
-                  </>
-                ) : (
-                  <div className="flex justify-between items-center text-lg font-bold">
-                    <span>Total Kontrak Tahunan:</span>
-                    <span className="text-blue-600">
-                      {formatPrice(currentProduct.price)}
-                    </span>
                   </div>
-                )}
-              </div>
 
-              {/* Action Buttons */}
-              <div className="space-y-3">
-                <button
-                  onClick={() =>
-                    onAddToCart({
-                      id: `cart-${Date.now()}`,
-                      productId: productId,
-                      name: currentProduct.name,
-                      price: currentProduct.price,
-                      duration:
-                        productId === "security-corporate" ||
-                        productId === "cleaning-corporate" ||
-                        productId === "sales-corporate"
-                          ? 12
-                          : selectedDuration,
-                      image: currentProduct.images[0],
-                      category: currentProduct.category,
-                    })
-                  }
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 px-6 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2"
-                >
-                  <ShoppingCart className="h-5 w-5" />
-                  <span>
-                    {productId === "security-corporate" ||
-                    productId === "cleaning-corporate" ||
-                    productId === "sales-corporate"
-                      ? "Ajukan Kontrak Tahunan"
-                      : "Tambah ke Keranjang"}
-                  </span>
-                </button>
+                  {/* Action Buttons */}
+                  <div className="space-y-3">
+                    <button
+                      onClick={() =>
+                        onAddToCart({
+                          id: `cart-${Date.now()}`,
+                          productId: productId,
+                          name: currentProduct.name,
+                          price: currentProduct.price,
+                          duration: selectedDuration,
+                          image: currentProduct.images[0],
+                          category: currentProduct.category,
+                        })
+                      }
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 px-6 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2"
+                    >
+                      <ShoppingCart className="h-5 w-5" />
+                      <span>Tambah ke Keranjang</span>
+                    </button>
 
-                <div className="grid grid-cols-2 gap-3">
-                  <button className="bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2">
-                    <MessageCircle className="h-4 w-4" />
-                    <span>Chat Admin</span>
-                  </button>
-                  <button className="bg-slate-600 hover:bg-slate-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2">
-                    <Phone className="h-4 w-4" />
-                    <span>Telepon</span>
-                  </button>
-                </div>
-              </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2">
+                        <MessageCircle className="h-4 w-4" />
+                        <span>Chat Admin</span>
+                      </button>
+                      <button className="bg-slate-600 hover:bg-slate-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2">
+                        <Phone className="h-4 w-4" />
+                        <span>Telepon</span>
+                      </button>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="text-center py-6">
+                    <div className="text-2xl font-bold text-slate-600 mb-4">
+                      Harga Sesuai Permintaan / Kontak Admin
+                    </div>
+                    <p className="text-slate-600 mb-6">
+                      Layanan premium dan sensitif dengan harga yang disesuaikan
+                      dengan kebutuhan spesifik Anda.
+                    </p>
+                  </div>
+
+                  <div className="space-y-3">
+                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 px-6 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2">
+                      <MessageCircle className="h-5 w-5" />
+                      <span>Hubungi Admin untuk Konsultasi</span>
+                    </button>
+
+                    <div className="grid grid-cols-2 gap-3">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2">
+                        <Phone className="h-4 w-4" />
+                        <span>Telepon</span>
+                      </button>
+                      <button className="bg-slate-600 hover:bg-slate-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2">
+                        <MessageCircle className="h-4 w-4" />
+                        <span>WhatsApp</span>
+                      </button>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
 
             {/* Trust Indicators */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-4 gap-4">
               <div className="text-center">
                 <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
                   <Shield className="h-6 w-6 text-blue-600" />
                 </div>
                 <div className="text-sm font-medium text-slate-800">
-                  Bergaransi
+                  Terpercaya
                 </div>
               </div>
               <div className="text-center">
-                <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Award className="h-6 w-6 text-green-600" />
+                <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Award className="h-6 w-6 text-blue-600" />
                 </div>
                 <div className="text-sm font-medium text-slate-800">
-                  Bersertifikat
+                  Berkualitas
                 </div>
               </div>
               <div className="text-center">
@@ -622,8 +633,39 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                   <Clock className="h-6 w-6 text-purple-600" />
                 </div>
                 <div className="text-sm font-medium text-slate-800">
-                  24/7 Support
+                  Pelayanan Cepat
                 </div>
+              </div>
+              {currentProduct.showPrice && (
+                <div className="text-center">
+                  <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <DollarSign className="h-6 w-6 text-green-600" />
+                  </div>
+                  <div className="text-sm font-medium text-slate-800">
+                    Harga Terjangkau
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Payment Methods */}
+            <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 mt-4">
+              <p className="text-sm text-slate-600 mb-2 font-medium">
+                Metode Pembayaran:
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">
+                  E-Wallet
+                </span>
+                <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">
+                  Transfer Bank
+                </span>
+                <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">
+                  QRIS
+                </span>
+                <span className="bg-white text-xs px-2 py-1 rounded border border-slate-200">
+                  Tunai
+                </span>
               </div>
             </div>
           </div>
@@ -636,10 +678,11 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
               {[
                 "overview",
                 "specifications",
-                ...(productId === "security-corporate" ||
-                productId === "cleaning-corporate" ||
-                productId === "sales-corporate"
-                  ? ["rab", "case-study"]
+                ...(rabConfig[productId as keyof typeof rabConfig]
+                  ? ["rab"]
+                  : []),
+                ...(caseStudies.find((cs) => cs.productId === productId)
+                  ? ["case-study"]
                   : []),
                 "testimonials",
               ].map((tab) => (
@@ -675,7 +718,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {currentProduct.features.map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-green-600 flex-shrink-0" />
+                      <Check className="h-5 w-5 text-blue-600 flex-shrink-0" />
                       <span className="text-slate-700">{feature}</span>
                     </div>
                   ))}
@@ -686,7 +729,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
             {activeTab === "specifications" && (
               <div>
                 <h3 className="text-2xl font-bold text-slate-800 mb-6">
-                  Spesifikasi Teknis
+                  Spesifikasi
                 </h3>
                 <div className="space-y-4">
                   {Object.entries(currentProduct.specifications).map(
