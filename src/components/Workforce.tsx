@@ -19,7 +19,7 @@ const Workforce: React.FC<WorkforceProps> = ({ onDetailClick }) => {
       value: '95%',
       description: 'Karyawan bersertifikat',
       icon: GraduationCap,
-      color: 'bg-green-600'
+      color: 'bg-blue-600'
     },
     {
       title: 'Pengalaman',
@@ -72,7 +72,7 @@ const Workforce: React.FC<WorkforceProps> = ({ onDetailClick }) => {
             Data Tenaga Kerja
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Tim profesional kami terdiri dari tenaga kerja berpengalaman, terlatih, 
+            Tim profesional kami terdiri dari tenaga kerja berpengalaman, terlatih,
             dan bersertifikat untuk memberikan layanan terbaik.
           </p>
         </div>
@@ -100,7 +100,7 @@ const Workforce: React.FC<WorkforceProps> = ({ onDetailClick }) => {
           <h3 className="text-2xl font-bold text-slate-800 mb-8 text-center">
             Distribusi Tenaga Kerja per Departemen
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {departments.map((dept, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
@@ -108,7 +108,7 @@ const Workforce: React.FC<WorkforceProps> = ({ onDetailClick }) => {
                   <h4 className="text-xl font-semibold text-slate-800">{dept.name}</h4>
                   <span className="text-2xl font-bold text-blue-600">{dept.count}</span>
                 </div>
-                
+
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm text-slate-600">Persentase</span>
@@ -121,7 +121,7 @@ const Workforce: React.FC<WorkforceProps> = ({ onDetailClick }) => {
                     ></div>
                   </div>
                 </div>
-                
+
                 <div>
                   <p className="text-sm text-slate-600 mb-2">Kualifikasi:</p>
                   <div className="flex flex-wrap gap-2">
@@ -138,7 +138,7 @@ const Workforce: React.FC<WorkforceProps> = ({ onDetailClick }) => {
               </div>
             ))}
           </div>
-          
+
           <div className="mt-8 text-center">
             <button
               onClick={onDetailClick}

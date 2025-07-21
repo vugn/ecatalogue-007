@@ -55,11 +55,11 @@ const CaseStudyTab: React.FC<CaseStudyTabProps> = ({ caseStudy }) => {
                 </div>
 
                 <div className="bg-slate-50 p-6 rounded-lg">
-                    <h4 className="text-lg font-bold text-green-600 mb-4">Solusi</h4>
+                    <h4 className="text-lg font-bold text-blue-600 mb-4">Solusi</h4>
                     <ul className="space-y-2">
                         {caseStudy.solutions.map((solution, index) => (
                             <li key={index} className="flex items-start">
-                                <ChevronRight className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                                <ChevronRight className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
                                 <span className="text-slate-700">{solution}</span>
                             </li>
                         ))}

@@ -10,7 +10,6 @@ interface WorkforceDetailProps {
 const WorkforceDetail: React.FC<WorkforceDetailProps> = ({ selectedWorker, onBack, onWorkerSelect }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterDepartment, setFilterDepartment] = useState('all');
-  const [viewMode, setViewMode] = useState('grid'); // grid or detail
 
   const employees = [
     {
@@ -145,7 +144,7 @@ const WorkforceDetail: React.FC<WorkforceDetailProps> = ({ selectedWorker, onBac
 
   const filteredEmployees = employees.filter(employee => {
     const matchesSearch = employee.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         employee.position.toLowerCase().includes(searchTerm.toLowerCase());
+      employee.position.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesDepartment = filterDepartment === 'all' || employee.department === filterDepartment;
     return matchesSearch && matchesDepartment;
   });
@@ -239,7 +238,7 @@ const WorkforceDetail: React.FC<WorkforceDetailProps> = ({ selectedWorker, onBac
 
                   <div>
                     <h3 className="text-lg font-semibold text-slate-800 mb-4">Status</h3>
-                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-800">
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800">
                       <div className="w-2 h-2 bg-green-600 rounded-full mr-2"></div>
                       {selectedEmployeeData.status}
                     </div>

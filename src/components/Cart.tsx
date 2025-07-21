@@ -1,13 +1,13 @@
 import React from 'react';
 import { X, Plus, Minus, ShoppingCart, Trash2 } from 'lucide-react';
-import { CartItem } from '../App';
+import { CartItem } from '../data/unifiedSchema';
 
 interface CartProps {
   isOpen: boolean;
   onClose: () => void;
   items: CartItem[];
-  onUpdateQuantity: (id: string, quantity: number) => void;
-  onRemoveItem: (id: string) => void;
+  onUpdateQuantity: (productId: string, quantity: number) => void;
+  onRemoveItem: (productId: string) => void;
   totalPrice: number;
   onCheckout: () => void;
 }
@@ -73,16 +73,16 @@ const Cart: React.FC<CartProps> = ({
                         <h4 className="font-semibold text-slate-800 truncate">{item.name}</h4>
                         <p className="text-sm text-slate-600">{item.category}</p>
                         <p className="text-sm text-slate-600">
-                          {(item.id === 'security-corporate' || item.id === 'cleaning-corporate' || item.id === 'sales-corporate') ? 'Kontrak: 1 Tahun' : `Durasi: ${item.duration} bulan`}
+                          {(item.productId === 'security-corporate' || item.productId === 'cleaning-corporate' || item.productId === 'sales-corporate') ? 'Kontrak: 1 Tahun' : `Durasi: ${item.duration} bulan`}
                         </p>
                         <div className="flex items-center justify-between mt-2">
                           <span className="font-bold text-blue-600">
-                            {(item.id === 'security-corporate' || item.id === 'cleaning-corporate' || item.id === 'sales-corporate')
+                            {(item.productId === 'security-corporate' || item.productId === 'cleaning-corporate' || item.productId === 'sales-corporate')
                               ? formatPrice(item.price)
                               : formatPrice(item.price * item.duration)}
                           </span>
                           <button
-                            onClick={() => onRemoveItem(item.id)}
+                            onClick={() => onRemoveItem(item.productId)}
                             className="text-red-500 hover:text-red-700 p-1"
                           >
                             <Trash2 className="h-4 w-4" />
@@ -94,7 +94,7 @@ const Cart: React.FC<CartProps> = ({
                     <div className="flex items-center justify-between mt-4">
                       <div className="flex items-center space-x-3">
                         <button
-                          onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}
+                          onClick={() => onUpdateQuantity(item.productId, item.quantity - 1)}
                           className="p-1 hover:bg-slate-200 rounded transition-colors"
                         >
                           <Minus className="h-4 w-4" />
@@ -103,14 +103,14 @@ const Cart: React.FC<CartProps> = ({
                           {item.quantity}
                         </span>
                         <button
-                          onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
+                          onClick={() => onUpdateQuantity(item.productId, item.quantity + 1)}
                           className="p-1 hover:bg-slate-200 rounded transition-colors"
                         >
                           <Plus className="h-4 w-4" />
                         </button>
                       </div>
                       <span className="text-sm text-slate-600">
-                        Total: {(item.id === 'security-corporate' || item.id === 'cleaning-corporate' || item.id === 'sales-corporate')
+                        Total: {(item.productId === 'security-corporate' || item.productId === 'cleaning-corporate' || item.productId === 'sales-corporate')
                           ? formatPrice(item.price * item.quantity)
                           : formatPrice(item.price * item.quantity * item.duration)}
                       </span>

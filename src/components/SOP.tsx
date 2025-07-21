@@ -19,7 +19,7 @@ const SOP: React.FC = () => {
     {
       title: 'Standard Operasional Cleaning',
       icon: Users,
-      color: 'bg-green-600',
+      color: 'bg-blue-600',
       steps: [
         'Persiapan peralatan dan bahan',
         'Pemeriksaan area kerja',
@@ -75,7 +75,7 @@ const SOP: React.FC = () => {
             Standard Operating Procedures
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Prosedur operasional standar yang ketat untuk memastikan konsistensi 
+            Prosedur operasional standar yang ketat untuk memastikan konsistensi
             dan kualitas layanan yang optimal di setiap penugasan.
           </p>
         </div>
@@ -94,7 +94,7 @@ const SOP: React.FC = () => {
                     <h3 className="text-xl font-bold text-white">{procedure.title}</h3>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
                   <div className="space-y-4">
                     {procedure.steps.map((step, stepIndex) => (
@@ -116,7 +116,7 @@ const SOP: React.FC = () => {
           <h3 className="text-2xl font-bold text-slate-800 mb-8 text-center">
             Standar Kualitas & Sertifikasi
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {qualityStandards.map((standard, index) => {
               const IconComponent = standard.icon;
@@ -134,10 +134,10 @@ const SOP: React.FC = () => {
               );
             })}
           </div>
-          
+
           <div className="mt-8 p-6 bg-blue-50 rounded-xl border border-blue-200">
             <p className="text-blue-800 text-center">
-              <strong>Komitmen Kami:</strong> Setiap prosedur dijalankan dengan konsisten dan 
+              <strong>Komitmen Kami:</strong> Setiap prosedur dijalankan dengan konsisten dan
               dievaluasi secara berkala untuk memastikan standar kualitas tertinggi dalam setiap layanan.
             </p>
           </div>

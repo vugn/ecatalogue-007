@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Shield, Users, Briefcase, Check, Star, Clock, Award, Phone, MessageCircle } from 'lucide-react';
+import { ArrowLeft, Shield, Users, Briefcase, Check, Star, Clock, Award, Phone, MessageCircle, DollarSign } from 'lucide-react';
 
 interface ServiceDetailProps {
   selectedService: string;
@@ -94,7 +94,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ selectedService, onBack }
       title: 'Cleaning Service Professional',
       subtitle: 'Kebersihan Standar Internasional',
       icon: Users,
-      color: 'bg-green-600',
+      color: 'bg-blue-600',
       description: 'Layanan kebersihan menyeluruh dengan standar internasional, menggunakan peralatan modern dan produk ramah lingkungan untuk menciptakan lingkungan kerja yang bersih dan sehat.',
       features: [
         'General Cleaning Harian',
@@ -288,15 +288,14 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ selectedService, onBack }
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`py-4 px-2 border-b-2 font-medium transition-colors capitalize ${
-                    activeTab === tab 
-                      ? 'border-blue-600 text-blue-600' 
+                  className={`py-4 px-2 border-b-2 font-medium transition-colors capitalize ${activeTab === tab
+                      ? 'border-blue-600 text-blue-600'
                       : 'border-transparent text-slate-600 hover:text-slate-800'
-                  }`}
+                    }`}
                 >
-                  {tab === 'overview' ? 'Ringkasan' : 
-                   tab === 'packages' ? 'Paket Layanan' :
-                   tab === 'specifications' ? 'Spesifikasi' : 'Testimoni'}
+                  {tab === 'overview' ? 'Ringkasan' :
+                    tab === 'packages' ? 'Paket Layanan' :
+                      tab === 'specifications' ? 'Spesifikasi' : 'Testimoni'}
                 </button>
               ))}
             </div>
@@ -310,7 +309,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ selectedService, onBack }
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {currentService.features.map((feature, index) => (
                       <div key={index} className="flex items-center space-x-3">
-                        <Check className="h-5 w-5 text-green-600 flex-shrink-0" />
+                        <Check className="h-5 w-5 text-blue-600 flex-shrink-0" />
                         <span className="text-slate-700">{feature}</span>
                       </div>
                     ))}
@@ -319,7 +318,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ selectedService, onBack }
 
                 <div className="bg-slate-50 rounded-xl p-6">
                   <h3 className="text-xl font-semibold text-slate-800 mb-4">Mengapa Memilih Layanan Kami?</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div className="text-center">
                       <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
                         <Award className="h-8 w-8 text-blue-600" />
@@ -328,8 +327,8 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ selectedService, onBack }
                       <p className="text-sm text-slate-600">Tim profesional dengan sertifikasi internasional</p>
                     </div>
                     <div className="text-center">
-                      <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Clock className="h-8 w-8 text-green-600" />
+                      <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <Clock className="h-8 w-8 text-blue-600" />
                       </div>
                       <h4 className="font-semibold text-slate-800 mb-2">24/7 Support</h4>
                       <p className="text-sm text-slate-600">Dukungan penuh sepanjang waktu</p>
@@ -341,6 +340,15 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ selectedService, onBack }
                       <h4 className="font-semibold text-slate-800 mb-2">Kualitas Terjamin</h4>
                       <p className="text-sm text-slate-600">Standar kualitas internasional</p>
                     </div>
+                    {selectedService !== 'security' && selectedService !== 'outsourcing' && (
+                      <div className="text-center">
+                        <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                          <DollarSign className="h-8 w-8 text-green-600" />
+                        </div>
+                        <h4 className="font-semibold text-slate-800 mb-2">Harga Terjangkau</h4>
+                        <p className="text-sm text-slate-600">Pembayaran mudah dan fleksibel</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -351,9 +359,8 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ selectedService, onBack }
                 <h2 className="text-2xl font-bold text-slate-800 mb-6">Paket Layanan</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {currentService.packages.map((pkg, index) => (
-                    <div key={index} className={`border rounded-xl p-6 relative ${
-                      pkg.popular ? 'border-blue-500 shadow-lg' : 'border-slate-200'
-                    }`}>
+                    <div key={index} className={`border rounded-xl p-6 relative ${pkg.popular ? 'border-blue-500 shadow-lg' : 'border-slate-200'
+                      }`}>
                       {pkg.popular && (
                         <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                           <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-medium">
@@ -361,28 +368,45 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ selectedService, onBack }
                           </span>
                         </div>
                       )}
-                      
+
                       <h3 className="text-xl font-bold text-slate-800 mb-2">{pkg.name}</h3>
                       <div className="mb-6">
-                        <span className="text-3xl font-bold text-blue-600">{pkg.price}</span>
-                        <span className="text-slate-600">{pkg.period}</span>
+                        {selectedService === 'security' || selectedService === 'outsourcing' ? (
+                          <div className="text-center py-2">
+                            <span className="text-xl font-bold text-slate-600 bg-slate-100 px-4 py-2 rounded-lg">
+                              Harga Sesuai Permintaan / Kontak Admin
+                            </span>
+                          </div>
+                        ) : (
+                          <>
+                            <span className="text-3xl font-bold text-blue-600">{pkg.price}</span>
+                            <span className="text-slate-600">{pkg.period}</span>
+                            <div className="mt-2 bg-slate-50 p-2 rounded-lg border border-slate-200">
+                              <p className="text-xs text-slate-600 mb-1 font-medium">Metode Pembayaran:</p>
+                              <div className="flex flex-wrap gap-1">
+                                <span className="bg-white text-xs px-1 py-0.5 rounded border border-slate-200">E-Wallet</span>
+                                <span className="bg-white text-xs px-1 py-0.5 rounded border border-slate-200">Transfer</span>
+                                <span className="bg-white text-xs px-1 py-0.5 rounded border border-slate-200">QRIS</span>
+                              </div>
+                            </div>
+                          </>
+                        )}
                       </div>
-                      
+
                       <ul className="space-y-3 mb-8">
                         {pkg.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center space-x-2">
-                            <Check className="h-5 w-5 text-green-600 flex-shrink-0" />
+                            <Check className="h-5 w-5 text-blue-600 flex-shrink-0" />
                             <span className="text-slate-700">{feature}</span>
                           </li>
                         ))}
                       </ul>
-                      
-                      <button className={`w-full py-3 rounded-lg font-semibold transition-colors ${
-                        pkg.popular 
-                          ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+
+                      <button className={`w-full py-3 rounded-lg font-semibold transition-colors ${pkg.popular
+                          ? 'bg-blue-600 hover:bg-blue-700 text-white'
                           : 'bg-slate-100 hover:bg-slate-200 text-slate-800'
-                      }`}>
-                        Pilih Paket
+                        }`}>
+                        {selectedService === 'security' || selectedService === 'outsourcing' ? 'Hubungi Admin' : 'Pilih Paket'}
                       </button>
                     </div>
                   ))}
@@ -442,7 +466,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ selectedService, onBack }
                     <Phone className="h-5 w-5" />
                     <span>Hubungi Sekarang</span>
                   </button>
-                  <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2">
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2">
                     <MessageCircle className="h-5 w-5" />
                     <span>Chat WhatsApp</span>
                   </button>

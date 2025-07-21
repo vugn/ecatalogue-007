@@ -220,10 +220,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
     };
   };
 
-  // Function to format number without currency
-  const formatNumber = (number: number) => {
-    return new Intl.NumberFormat("id-ID").format(number);
-  };
+ 
 
   const productData = {
     "atk-001": {
@@ -686,13 +683,16 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="border-b border-slate-200">
             <div className="flex space-x-8 px-8 overflow-x-auto">
-              {[
-                "overview",
-                "specifications",
-                "rab",
-                "case-study",
-                "testimonials",
-              ].map((tab) => (
+              {(currentProduct.category === "Jasa Khusus"
+                ? [
+                    "overview",
+                    "specifications",
+                    "rab",
+                    "case-study",
+                    "testimonials",
+                  ]
+                : ["overview", "specifications", "testimonials"]
+              ).map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
@@ -725,6 +725,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {currentProduct.features.map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
+                      <Check className="h-5 w-5 text-blue-600 flex-shrink-0" />
                       <Check className="h-5 w-5 text-blue-600 flex-shrink-0" />
                       <span className="text-slate-700">{feature}</span>
                     </div>
@@ -762,7 +763,9 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
               </div>
             )}
 
-            {activeTab === "rab" &&
+            {/* RAB Tab - Only for Jasa Khusus */}
+            {currentProduct.category === "Jasa Khusus" &&
+              activeTab === "rab" &&
               (() => {
                 const rabData = calculateRAB(productId, currentProduct.price);
                 if (!rabData) {
@@ -830,9 +833,6 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                             <th className="text-right p-4 font-semibold text-slate-800">
                               Persentase
                             </th>
-                            <th className="text-right p-4 font-semibold text-slate-800">
-                              Nilai (Rp)
-                            </th>
                           </tr>
                         </thead>
                         <tbody>
@@ -854,18 +854,12 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                               <td className="text-right p-4 font-medium text-slate-700">
                                 {item.percentage}%
                               </td>
-                              <td className="text-right p-4 font-bold text-slate-800">
-                                {formatNumber(item.amount)}
-                              </td>
                             </tr>
                           ))}
                           <tr className="bg-slate-50 font-bold">
                             <td className="p-4 text-slate-800">Total</td>
                             <td className="text-right p-4 text-slate-800">
                               100%
-                            </td>
-                            <td className="text-right p-4 text-slate-800">
-                              {formatNumber(rabData.total)}
                             </td>
                           </tr>
                         </tbody>
@@ -945,29 +939,30 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
               </div>
             )}
 
-            {activeTab === "case-study" && (
-              <>
-                {caseStudies.filter((cs) => cs.productId === productId).length >
-                0 ? (
-                  <CaseStudyTab
-                    caseStudy={
-                      caseStudies.find((cs) => cs.productId === productId)!
-                    }
-                  />
-                ) : (
-                  <div className="text-center py-12">
-                    <BookOpen className="h-16 w-16 text-slate-300 mx-auto mb-4" />
-                    <h3 className="text-xl font-bold text-slate-800 mb-2">
-                      Belum Ada Studi Kasus
-                    </h3>
-                    <p className="text-slate-600 max-w-md mx-auto">
-                      Studi kasus untuk produk ini sedang dalam proses persiapan
-                      dan akan segera ditambahkan.
-                    </p>
-                  </div>
-                )}
-              </>
-            )}
+            {currentProduct.category === "Jasa Khusus" &&
+              activeTab === "case-study" && (
+                <>
+                  {caseStudies.filter((cs) => cs.productId === productId)
+                    .length > 0 ? (
+                    <CaseStudyTab
+                      caseStudy={
+                        caseStudies.find((cs) => cs.productId === productId)!
+                      }
+                    />
+                  ) : (
+                    <div className="text-center py-12">
+                      <BookOpen className="h-16 w-16 text-slate-300 mx-auto mb-4" />
+                      <h3 className="text-xl font-bold text-slate-800 mb-2">
+                        Belum Ada Studi Kasus
+                      </h3>
+                      <p className="text-slate-600 max-w-md mx-auto">
+                        Studi kasus untuk produk ini sedang dalam proses
+                        persiapan dan akan segera ditambahkan.
+                      </p>
+                    </div>
+                  )}
+                </>
+              )}
           </div>
         </div>
       </div>
