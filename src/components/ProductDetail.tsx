@@ -130,6 +130,74 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
         },
       ],
     },
+    "atk-001": {
+      currency: "Rp",
+      title: "ATK",
+      color: "blue",
+      components: [
+        {
+          name: "Pulpen & Pensil",
+          percentage: 30,
+          description: "Pulpen gel, pensil 2B, penghapus",
+        },
+        {
+          name: "Kertas & Map",
+          percentage: 25,
+          description: "Kertas HVS, map plastik",
+        },
+        {
+          name: "Perlengkapan Lain",
+          percentage: 20,
+          description: "Stapler, paper clip, correction pen",
+        },
+        {
+          name: "Kemasan & Distribusi",
+          percentage: 15,
+          description: "Box eksklusif, ongkir",
+        },
+        {
+          name: "Cadangan & Lain-lain",
+          percentage: 10,
+          description: "Cadangan barang, biaya tak terduga",
+        },
+      ],
+    },
+    "jasa-keamanan": {
+      currency: "Rp",
+      title: "Jasa Pengamanan",
+      color: "blue",
+      components: [
+        {
+          name: "Honorarium Personel",
+          percentage: 55,
+          description:
+            "Gaji bulanan personel keamanan (ex-TNI/Polri), tunjangan, dan insentif kinerja.",
+        },
+        {
+          name: "Pelatihan & Sertifikasi",
+          percentage: 10,
+          description:
+            "Pelatihan keamanan khusus, sertifikasi Gada Pratama & Madya.",
+        },
+        {
+          name: "Peralatan & Seragam",
+          percentage: 15,
+          description:
+            "Seragam standar militer, alat komunikasi, dan perlengkapan keamanan.",
+        },
+        {
+          name: "Asuransi & BPJS",
+          percentage: 10,
+          description:
+            "Asuransi kerja, BPJS Ketenagakerjaan, dan perlindungan hukum.",
+        },
+        {
+          name: "Operasional & Manajemen",
+          percentage: 10,
+          description: "Biaya operasional, manajemen, dan cadangan darurat.",
+        },
+      ],
+    },
   };
 
   // Function to calculate RAB allocation
@@ -291,62 +359,6 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       badge: "Populer",
       showPrice: true,
     },
-    "security-corporate": {
-      name: "Jasa Keamanan Korporat BUMN",
-      category: "Jasa Keamanan",
-      price: 3000000000,
-      originalPrice: 3000000000,
-      rating: 5.0,
-      reviews: 23,
-      images: [
-        "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/8728380/pexels-photo-8728380.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=800",
-      ],
-      description:
-        "Solusi keamanan komprehensif dengan kontrak tahunan tetap untuk BUMN dan korporat besar. Meliputi penyediaan tim keamanan profesional berlapis dengan struktur yang solid untuk perlindungan area kompleks.",
-      features: [
-        "Kontrak Tahunan Tetap (Fixed Yearly Contract)",
-        "Tim Keamanan Berlapis: Anggota Satpam, Komandan Regu, Koordinator Lapangan",
-        "Cakupan Layanan Fleksibel: 8 jam, 16 jam, hingga 24 jam",
-        "Solusi Area Kompleks: Rumah Sakit, Kantor BUMN, Gudang Logistik",
-        "Patroli Rutin dan Monitoring CCTV",
-        "Manajemen Akses dan Pos Vital",
-        "Dukungan Pengamanan Acara dan Pengawalan",
-        "Laporan Digital Real-time",
-        "Supervisor dan Manajemen Proyek",
-        "Asuransi dan BPJS Ketenagakerjaan Lengkap",
-      ],
-      specifications: {
-        "Model Kontrak": "Kontrak Tahunan Tetap (Fixed Yearly)",
-        "Durasi Layanan": "Disesuaikan kebutuhan (8, 16, atau 24 jam)",
-        "Struktur Tim":
-          "Anggota Satpam (Gada Pratama), Komandan Regu (Gada Pratama/Madya), Koordinator Lapangan (Gada Madya)",
-        Sertifikasi: "Security License Multi-Level, K3, First Aid",
-        Peralatan:
-          "CCTV System, Radio Communication, Emergency Kit, Patrol Equipment",
-        Laporan: "Real-time digital dashboard dan laporan berkala",
-        "Response Time": "Emergency dalam 2 menit",
-        "Cakupan Area": "Unlimited sesuai kontrak",
-      },
-      testimonials: [
-        {
-          name: "PT Kereta Api Indonesia",
-          rating: 5,
-          comment:
-            "Sistem keamanan yang sangat komprehensif. Tim profesional dengan struktur yang jelas dan koordinasi yang baik.",
-        },
-        {
-          name: "RSUD Ulin Banjarmasin",
-          rating: 5,
-          comment:
-            "Pelayanan keamanan 24 jam sangat membantu menjaga keamanan rumah sakit. Tim responsif dan profesional.",
-        },
-      ],
-      inStock: true,
-      badge: "BUMN",
-      showPrice: true,
-    },
   };
 
   const currentProduct = productData[productId as keyof typeof productData];
@@ -371,7 +383,6 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
     );
   }
 
-  // Function to format price
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("id-ID", {
       style: "currency",
@@ -678,12 +689,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
               {[
                 "overview",
                 "specifications",
-                ...(rabConfig[productId as keyof typeof rabConfig]
-                  ? ["rab"]
-                  : []),
-                ...(caseStudies.find((cs) => cs.productId === productId)
-                  ? ["case-study"]
-                  : []),
+                "rab",
+                "case-study",
                 "testimonials",
               ].map((tab) => (
                 <button
@@ -756,12 +763,22 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
             )}
 
             {activeTab === "rab" &&
-              (productId === "security-corporate" ||
-                productId === "cleaning-corporate" ||
-                productId === "sales-corporate") &&
               (() => {
                 const rabData = calculateRAB(productId, currentProduct.price);
-                if (!rabData) return null;
+                if (!rabData) {
+                  return (
+                    <div className="text-center py-12">
+                      <DollarSign className="h-16 w-16 text-slate-300 mx-auto mb-4" />
+                      <h3 className="text-xl font-bold text-slate-800 mb-2">
+                        Belum Ada Data RAB
+                      </h3>
+                      <p className="text-slate-600 max-w-md mx-auto">
+                        Data alokasi anggaran untuk produk ini sedang dalam
+                        proses persiapan dan akan segera ditambahkan.
+                      </p>
+                    </div>
+                  );
+                }
 
                 const colorClasses = {
                   blue: {
@@ -807,17 +824,14 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                       <table className="w-full border-collapse bg-white rounded-lg shadow-sm">
                         <thead>
                           <tr className="bg-slate-50">
-                            <th className="border border-slate-300 px-4 py-3 text-left font-semibold text-slate-800">
-                              Komponen Biaya
+                            <th className="text-left p-4 font-semibold text-slate-800">
+                              Komponen
                             </th>
-                            <th className="border border-slate-300 px-4 py-3 text-right font-semibold text-slate-800">
-                              Alokasi (Rp)
-                            </th>
-                            <th className="border border-slate-300 px-4 py-3 text-right font-semibold text-slate-800">
+                            <th className="text-right p-4 font-semibold text-slate-800">
                               Persentase
                             </th>
-                            <th className="border border-slate-300 px-4 py-3 text-left font-semibold text-slate-800">
-                              Keterangan
+                            <th className="text-right p-4 font-semibold text-slate-800">
+                              Nilai (Rp)
                             </th>
                           </tr>
                         </thead>
@@ -825,162 +839,76 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                           {rabData.allocations.map((item, index) => (
                             <tr
                               key={index}
-                              className={index % 2 === 1 ? "bg-slate-25" : ""}
+                              className="border-b border-slate-100 hover:bg-slate-50"
                             >
-                              <td className="border border-slate-300 px-4 py-3 font-medium text-slate-800">
-                                {item.name}
+                              <td className="p-4">
+                                <div>
+                                  <div className="font-medium text-slate-800">
+                                    {item.name}
+                                  </div>
+                                  <div className="text-sm text-slate-600 mt-1">
+                                    {item.description}
+                                  </div>
+                                </div>
                               </td>
-                              <td className="border border-slate-300 px-4 py-3 text-right">
-                                {formatNumber(item.amount)}
-                              </td>
-                              <td
-                                className={`border border-slate-300 px-4 py-3 text-right ${colors.accent} font-medium`}
-                              >
+                              <td className="text-right p-4 font-medium text-slate-700">
                                 {item.percentage}%
                               </td>
-                              <td className="border border-slate-300 px-4 py-3 text-slate-600">
-                                {item.description}
+                              <td className="text-right p-4 font-bold text-slate-800">
+                                {formatNumber(item.amount)}
                               </td>
                             </tr>
                           ))}
-                          <tr className={`${colors.bg} font-bold`}>
-                            <td className="border border-slate-300 px-4 py-3 text-slate-800">
-                              TOTAL
-                            </td>
-                            <td
-                              className={`border border-slate-300 px-4 py-3 text-right ${colors.text}`}
-                            >
-                              {formatNumber(rabData.total)}
-                            </td>
-                            <td
-                              className={`border border-slate-300 px-4 py-3 text-right ${colors.text}`}
-                            >
+                          <tr className="bg-slate-50 font-bold">
+                            <td className="p-4 text-slate-800">Total</td>
+                            <td className="text-right p-4 text-slate-800">
                               100%
                             </td>
-                            <td className="border border-slate-300 px-4 py-3 text-slate-800">
-                              Per Tahun
+                            <td className="text-right p-4 text-slate-800">
+                              {formatNumber(rabData.total)}
                             </td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
 
-                    <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div
-                        className={`${colors.bg} ${colors.border} rounded-lg p-6`}
-                      >
-                        <h4
-                          className={`font-semibold ${colors.text} mb-3 flex items-center`}
-                        >
-                          <Users className="h-5 w-5 mr-2" />
-                          Struktur Tim Profesional
-                        </h4>
-                        <ul
-                          className={`${colors.text.replace(
-                            "800",
-                            "700"
-                          )} text-sm space-y-2`}
-                        >
-                          {productId === "security-corporate" && (
-                            <>
-                              <li>
-                                •{" "}
-                                <strong>Anggota Satpam (Gada Pratama):</strong>{" "}
-                                Pelaksana lapangan
-                              </li>
-                              <li>
-                                •{" "}
-                                <strong>
-                                  Komandan Regu (Gada Pratama/Madya):
-                                </strong>{" "}
-                                Pemimpin tim kecil
-                              </li>
-                              <li>
-                                •{" "}
-                                <strong>
-                                  Koordinator Lapangan (Gada Madya):
-                                </strong>{" "}
-                                Supervisor dan penghubung manajemen
-                              </li>
-                            </>
-                          )}
-                          {productId === "cleaning-corporate" && (
-                            <>
-                              <li>
-                                • <strong>Cleaning Staff:</strong> Pelaksana
-                                cleaning harian
-                              </li>
-                              <li>
-                                • <strong>Supervisor Area:</strong> Pemimpin tim
-                                dan quality control
-                              </li>
-                              <li>
-                                • <strong>Koordinator Lapangan:</strong>{" "}
-                                Penghubung manajemen dan klien
-                              </li>
-                            </>
-                          )}
-                          {productId === "sales-corporate" && (
-                            <>
-                              <li>
-                                • <strong>Sales Executive:</strong> Pelaksana
-                                lapangan dan client acquisition
-                              </li>
-                              <li>
-                                • <strong>Sales Manager:</strong> Pemimpin tim
-                                dan strategy execution
-                              </li>
-                              <li>
-                                • <strong>Regional Director:</strong> Supervisor
-                                dan business development
-                              </li>
-                            </>
-                          )}
-                        </ul>
-                      </div>
-
-                      <div
-                        className={`bg-blue-50 border-blue-200 rounded-lg p-6`}
-                      >
-                        <h4
-                          className={`font-semibold text-blue-800 mb-3 flex items-center`}
-                        >
-                          <Award className="h-5 w-5 mr-2" />
-                          Cakupan Layanan Lengkap
-                        </h4>
-                        <ul className={`text-blue-700 text-sm space-y-2`}>
-                          {productId === "security-corporate" && (
-                            <>
-                              <li>• Shift fleksibel: 8, 16, hingga 24 jam</li>
-                              <li>
-                                • Area kompleks: Rumah Sakit, BUMN, Gudang
-                              </li>
-                              <li>• Pengamanan acara dan pengawalan</li>
-                              <li>• Monitoring dan manajemen akses</li>
-                            </>
-                          )}
-                          {productId === "cleaning-corporate" && (
-                            <>
-                              <li>• Daily, deep cleaning, dan sanitasi</li>
-                              <li>
-                                • Fasilitas kompleks: Perkantoran, RS, Mall
-                              </li>
-                              <li>• Waste management dan daur ulang</li>
-                              <li>• Eco-friendly dan green cleaning</li>
-                            </>
-                          )}
-                          {productId === "sales-corporate" && (
-                            <>
-                              <li>
-                                • Lead generation dan customer acquisition
-                              </li>
-                              <li>• Digital marketing dan online presence</li>
-                              <li>• Market research dan competitor analysis</li>
-                              <li>• Performance analytics dan ROI tracking</li>
-                            </>
-                          )}
-                        </ul>
-                      </div>
+                    <div className="mt-6 bg-slate-50 rounded-lg p-4">
+                      <h4 className="font-semibold text-slate-800 mb-3">
+                        Penjelasan Komponen:
+                      </h4>
+                      <ul className="space-y-2 text-sm text-slate-700">
+                        {productId === "security-corporate" && (
+                          <>
+                            <li>
+                              • Gaji dan tunjangan tim keamanan profesional
+                            </li>
+                            <li>• Seragam dan perlengkapan standar keamanan</li>
+                            <li>• Asuransi dan BPJS ketenagakerjaan</li>
+                            <li>• Pelatihan dan peningkatan kualifikasi</li>
+                            <li>• Biaya operasional dan manajemen proyek</li>
+                          </>
+                        )}
+                        {productId === "cleaning-corporate" && (
+                          <>
+                            <li>
+                              • Gaji dan tunjangan tim cleaning profesional
+                            </li>
+                            <li>• Peralatan dan perlengkapan modern</li>
+                            <li>• Bahan kimia dan consumables eco-friendly</li>
+                            <li>• Asuransi dan BPJS ketenagakerjaan</li>
+                            <li>• Biaya operasional dan manajemen</li>
+                          </>
+                        )}
+                        {productId === "sales-corporate" && (
+                          <>
+                            <li>• Gaji dan tunjangan tim sales profesional</li>
+                            <li>• Digital marketing dan advertising</li>
+                            <li>• Technology dan CRM platform</li>
+                            <li>• Training dan development program</li>
+                            <li>• Biaya operasional dan manajemen</li>
+                          </>
+                        )}
+                      </ul>
                     </div>
                   </div>
                 );
