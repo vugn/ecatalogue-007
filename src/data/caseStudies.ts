@@ -551,8 +551,8 @@ export interface AllocationItem {
         company: "PT Eventindo Nusantara",
       },
       images: [
-        "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/8728380/pexels-photo-8728380.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/270220/pexels-photo-270220.jpeg",
+        "https://images.pexels.com/photos/12592589/pexels-photo-12592589.jpeg?auto=compress&cs=tinysrgb&w=800",
       ],
     },
     // Studi kasus untuk produk ATK
@@ -638,8 +638,8 @@ export interface AllocationItem {
         company: "Dinas Pendidikan Kota Banjarmasin",
       },
       images: [
-        "https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/6325920/pexels-photo-6325920.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://cdn.pixabay.com/photo/2013/05/02/10/57/creative-108545_1280.jpg?auto=compress&cs=tinysrgb&w=800",
       ],
     },
   ];

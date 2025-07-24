@@ -220,8 +220,6 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
     };
   };
 
- 
-
   const productData = {
     "atk-001": {
       name: "Paket ATK Lengkap Kantor",
@@ -231,8 +229,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       rating: 4.8,
       reviews: 45,
       images: [
-        "https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/6325920/pexels-photo-6325920.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://cdn.pixabay.com/photo/2013/05/02/10/57/creative-108545_1280.jpg?auto=compress&cs=tinysrgb&w=800",
       ],
       description:
         "Paket lengkap alat tulis kantor berkualitas untuk kebutuhan administrasi sehari-hari. Cocok untuk kantor, sekolah, dan keperluan pribadi dengan harga yang sangat terjangkau.",
@@ -281,8 +279,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       rating: 5.0,
       reviews: 12,
       images: [
-        "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/8728380/pexels-photo-8728380.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/270220/pexels-photo-270220.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/12592589/pexels-photo-12592589.jpeg?auto=compress&cs=tinysrgb&w=800",
       ],
       description:
         "Layanan pengamanan profesional dengan personel berpengalaman militer. Meliputi pengamanan acara, pengawalan, dan keamanan fasilitas dengan standar tinggi sesuai kebutuhan klien.",
@@ -324,8 +322,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       rating: 4.7,
       reviews: 156,
       images: [
-        "https://images.pexels.com/photos/33239/wheat-field-wheat-yellow-grain.jpg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/4110256/pexels-photo-4110256.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/8108170/pexels-photo-8108170.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/4910236/pexels-photo-4910236.jpeg?auto=compress&cs=tinysrgb&w=800",
       ],
       description:
         "Beras premium kualitas terbaik, pulen, wangi, dan bergizi tinggi. Langsung dari petani lokal Kalimantan Selatan dengan proses sortir yang ketat.",
@@ -725,7 +723,6 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {currentProduct.features.map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <Check className="h-5 w-5 text-blue-600 flex-shrink-0" />
                       <Check className="h-5 w-5 text-blue-600 flex-shrink-0" />
                       <span className="text-slate-700">{feature}</span>
                     </div>
