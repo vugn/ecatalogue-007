@@ -25,8 +25,8 @@ const products: Product[] = [
         rating: 4.8,
         reviews: 45,
         images: [
-            'https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&w=800',
-            'https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&w=800'
+            'https://images.pexels.com/photos/6325920/pexels-photo-6325920.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://cdn.pixabay.com/photo/2013/05/02/10/57/creative-108545_1280.jpg?auto=compress&cs=tinysrgb&w=800'
         ],
         description: 'Paket lengkap alat tulis kantor berkualitas untuk kebutuhan administrasi sehari-hari. Cocok untuk kantor, sekolah, dan keperluan pribadi.',
         shortDescription: 'Paket lengkap ATK berkualitas untuk kebutuhan kantor dan administrasi.',
@@ -99,7 +99,7 @@ const products: Product[] = [
         rating: 4.9,
         reviews: 78,
         images: [
-            'https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&w=800'
+            'https://cdn.pixabay.com/photo/2013/05/02/10/57/creative-108545_1280.jpg?auto=compress&cs=tinysrgb&w=800'
         ],
         description: 'Kertas HVS A4 berkualitas tinggi 80gsm, putih bersih, cocok untuk print dokumen, fotokopi, dan keperluan kantor.',
         shortDescription: 'Kertas HVS A4 80gsm berkualitas tinggi untuk keperluan print dan fotokopi.',
@@ -160,8 +160,8 @@ const products: Product[] = [
         rating: 4.7,
         reviews: 156,
         images: [
-            'https://images.pexels.com/photos/33239/wheat-field-wheat-yellow-grain.jpg?auto=compress&cs=tinysrgb&w=800',
-            'https://images.pexels.com/photos/4110256/pexels-photo-4110256.jpeg?auto=compress&cs=tinysrgb&w=800'
+            'https://images.pexels.com/photos/8108170/pexels-photo-8108170.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/4910236/pexels-photo-4910236.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         description: 'Beras premium kualitas terbaik, pulen, wangi, dan bergizi tinggi. Langsung dari petani lokal Kalimantan Selatan.',
         shortDescription: 'Beras premium kualitas terbaik, pulen dan wangi dari petani lokal.',
@@ -230,7 +230,7 @@ const products: Product[] = [
         rating: 4.6,
         reviews: 89,
         images: [
-            'https://images.pexels.com/photos/4110256/pexels-photo-4110256.jpeg?auto=compress&cs=tinysrgb&w=800'
+            'https://images.pexels.com/photos/4910236/pexels-photo-4910236.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         description: 'Minyak goreng berkualitas tinggi, jernih, tidak berbau tengik. Cocok untuk menggoreng dan memasak sehari-hari.',
         shortDescription: 'Minyak goreng berkualitas tinggi, jernih dan tidak berbau tengik.',
@@ -290,8 +290,8 @@ const products: Product[] = [
         rating: 5.0,
         reviews: 12,
         images: [
-            'https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800',
-            'https://images.pexels.com/photos/8728380/pexels-photo-8728380.jpeg?auto=compress&cs=tinysrgb&w=800'
+            'https://images.pexels.com/photos/270220/pexels-photo-270220.jpeg',
+            'https://images.pexels.com/photos/12592589/pexels-photo-12592589.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         description: 'Layanan pengamanan profesional dengan personel berpengalaman militer. Meliputi pengamanan acara, pengawalan, dan keamanan fasilitas dengan standar tinggi.',
         shortDescription: 'Layanan pengamanan profesional dengan personel berpengalaman militer.',
@@ -356,8 +356,8 @@ const products: Product[] = [
         rating: 4.9,
         reviews: 8,
         images: [
-            'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=800',
-            'https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800'
+            'https://images.pexels.com/photos/31914817/pexels-photo-31914817.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/7225253/pexels-photo-7225253.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         description: 'Program pelatihan bela diri dan pembentukan karakter dengan metode militer. Cocok untuk individu, kelompok, sekolah, dan perusahaan.',
         shortDescription: 'Program pelatihan bela diri dan pembentukan karakter dengan metode militer.',
@@ -424,7 +424,7 @@ const products: Product[] = [
         rating: 4.8,
         reviews: 23,
         images: [
-            'https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800'
+            'https://images.pexels.com/photos/7225253/pexels-photo-7225253.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         description: 'Seragam dan atribut militer berkualitas tinggi. Tersedia berbagai ukuran dan jenis seragam sesuai kebutuhan.',
         shortDescription: 'Seragam dan atribut militer berkualitas tinggi dengan berbagai ukuran.',
@@ -501,7 +501,7 @@ const certificates: Certificate[] = [
         issueDate: '2020-04-01',
         expiryDate: '2025-04-01',
         description: 'Surat kemitraan resmi dengan PRIMER KOPERASI KARTIKA BANJARMASIN untuk operasional koperasi.',
-        image: 'https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800',
+        image: 'https://images.pexels.com/photos/7225253/pexels-photo-7225253.jpeg?auto=compress&cs=tinysrgb&w=800',
         status: 'active',
         documentUrl: '#',
         isInternational: false
